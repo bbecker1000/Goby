@@ -3,3 +3,14 @@ I also included what I had started with the microsporidia data.
 
 Ben, we had ancillary data re: fish kill and antecedant rainfall for the 2010 analysis that you ran.  
 I don't remember what we did for those 2-- presume we just had a yes/no for fish kill event for the season prior.   
+
+
+
+BB to do 2023-04-05: 
+
+# pivot wide
+######TO DO: add DATE and STATION ID in to preserve Line 71ish
+
+# BB_TO DO example fields: TW_mort, SB_mort, TW_min_length, TW_length...  line 130
+
+
