@@ -1,0 +1,407 @@
+Date,Zone 2,ID,Station_ID,UTM_E,UTM_N,Width,Length,Max_depth,Min_depth,Ave_depth ,Area,Volumer,Dom_substrate,Subdom_substrate,SAV,EAV,Fil_Tub_Algae,Phytoplankton,SAV_Spp,EAV_Spp,Fil_algae_spp,Phyto_spp,Station NOTES
+2/20/1996,W,1,W1,540761,4187219,4,7,0.9,0,0.45,28,12.6,sand,NA,4,0,0,NA,NA,NA,NA,NA,
+2/20/1996,W,2,W2,540764,4187193,3.5,5,1.3,0,0.65,17.5,11.375,sand,NA,0,0,0,NA,NA,NA,NA,NA,
+2/20/1996,W,2.1,W2.1,540719,4187204,7,5.8,0.45,0,0.225,40.6,9.135,sand,NA,0,0,0,NA,NA,NA,NA,NA,
+2/20/1996,W,3,W3,540835,4187139,8.9,5.3,0.25,0,0.125,47.17,5.89625,sand,NA,0,0,0,NA,NA,NA,NA,NA,
+2/20/1996,W,3.1,W3.1,540845,4187115,3,9,0.62,0.25,0.435,27,11.745,sand,NA,3,0,0,NA,NA,NA,NA,NA,
+2/20/1996,W,4,W4,540882,4187083,4,8,0.3,0.65,0.475,32,15.2,sand,NA,1,0,0,NA,NA,NA,NA,NA,
+2/20/1996,W,5,W5,540974,4187008,4,8.5,0.45,0,0.225,34,7.65,sand,NA,1,0,0,NA,NA,NA,NA,NA,
+2/20/1996,W,5.1,W5.1,540982,4186990,6.3,4,1.15,0,0.575,25.2,14.49,sand,NA,0,0,0,NA,NA,NA,NA,NA,
+2/20/1996,NW,6,NW6,540963,4187194,4,3.5,1.1,0,0.55,14,7.7,gravel,mud,2,1,0,NA,NA,NA,NA,NA,
+2/20/1996,NW,7,NW7,540997,4187181,4,4.5,1.15,0.5,0.825,18,14.85,gravel,mud,1,1,0,NA,NA,NA,NA,NA,
+2/28/1996,NE,12,NE12,541220,4187244,3.2,7,1.1,0,0.55,22.4,12.32,muck,gravel,0,0,0,NA,NA,NA,NA,NA,
+2/28/1996,NE,12.1,NE12.1,541259,4187235,3.5,7.5,1.2,0,0.6,26.25,15.75,gravel,cobble,0,0,0,NA,NA,NA,NA,NA,
+2/28/1996,SW,14,SW14,541068,4186987,3.2,4.5,0.5,0,0.25,14.4,3.6,muck,gravel,2,0,0,NA,NA,NA,NA,NA,
+2/28/1996,SE,15,SE15,541333,4187041,3.5,5.5,0.75,0,0.375,19.25,7.21875,gravel,mud,1,0,0,NA,NA,NA,NA,NA,
+2/28/1996,SE,16,SE16,541511,4187123,4.1,8.3,0.9,0,0.45,34.03,15.3135,muck,NA,1,0,0,NA,NA,NA,NA,NA,
+10/3/1996,W,1,W1,540761,4187219,3.0,4.8,0.74,0,0.37,14.4,5.328,corophium_tubes,muck,1,0,0,NA,NA,NA,NA,NA,
+10/3/1996,W,1.1,W1.1,540727,4187229,3.0,3.7,0.4,0,0.2,11.1,2.22,sand,corophium_tubes,0,0,0,NA,NA,NA,NA,NA,
+10/4/1996,W,3.1,W3.1,540845,4187115,3.0,4.2,0.4,0,0.2,12.6,2.52,sand,corophium,0,0,0,NA,NA,NA,NA,NA,
+10/4/1996,W,4,W4,540882,4187083,3.0,3.2,0.82,0,0.41,9.6,3.936,sand,NA,0,0,0,NA,NA,NA,NA,NA,
+10/4/1996,W,5.1,W5.1,540982,4186990,3.0,4.3,0.25,0,0.125,12.8,1.59375,sand,corophium,0,0,0,NA,NA,NA,NA,NA,
+10/4/1996,NW,6,NW6,540963,4187194,3.0,4.5,0.55,0.1,0.325,13.5,4.3875,muck,mud,3,1,0,NA,NA,NA,NA,NA,
+10/4/1996,NW,7,NW7,540997,4187181,3.0,3.5,0.48,0,0.24,10.5,2.52,gravel,sand,0,0,0,NA,NA,NA,NA,NA,
+10/4/1996,NW,8,NW8,541018,4187197,3.0,2.7,0.4,0.08,0.24,8.1,1.944,muck,mud,2,2,0,NA,NA,NA,NA,NA,
+10/4/1996,NW,8.1,NW8.1,541086,4187187,3.0,3.0,0.4,0,0.2,9.0,1.8,mud,NA,1,2,0,NA,NA,NA,NA,NA,
+10/5/1996,E,10,E10,541620,4187269,3.0,3.0,0.35,0.2,0.275,9.1,2.5146,muck,NA,1,1,0,NA,NA,NA,NA,NA,
+10/5/1996,E,11,E11,541672,4187291,3.0,3.0,0.3,0.05,0.175,9.0,1.575,mud,gravel,2,1,0,NA,NA,NA,NA,NA,
+10/5/1996,E,13.1,E13.1,541704,4187233,3.0,3.0,0.37,0.1,0.235,9.0,2.115,mud,cobble,1,1,0,NA,NA,NA,NA,NA,
+10/5/1996,SE,15.1,SE15.1,541403,4187067,3.0,2.8,0.65,0.3,0.475,8.3,3.91875,mud,sand,1,2,0,NA,NA,NA,NA,NA,
+10/5/1996,SE,16,SE16,541511,4187123,3.0,2.6,0.32,0.1,0.21,7.9,1.664208,muck,NA,0,2,0,NA,NA,NA,NA,NA,
+10/5/1996,SE,16.1,SE16.1,541461,4187122,3.0,3.0,0.45,0.05,0.25,9.1,2.286,sand,gravel,1,3,0,NA,NA,NA,NA,NA,
+2/28/1997,W,1,W1,540761,4187219,3,5.1,1.11,0,0.555,15.3,16.983,gravel,sand,0,0,0,NA,NA,NA,NA,NA,
+2/28/1997,W,1.1,W1.1,540727,4187229,3,5.25,1,NA,1,15.75,15.75,sand,NA,3,0,0,NA,NA,NA,NA,NA,
+2/28/1997,W,2,W2,540764,4187193,3,3.3,1.05,0,0.525,9.9,10.395,sand,NA,0,0,0,NA,NA,NA,NA,NA,
+2/28/1997,W,2.1,W2.1,540719,4187204,3,4.7,1.23,0,0.615,14.1,17.343,gravel,sand,0,0,0,NA,NA,NA,NA,NA,
+2/28/1997,W,2.3,W2.3,540740,4187203,3,4.6,0.85,0,0.425,13.8,11.73,sand,NA,0,0,0,NA,NA,NA,NA,NA,
+2/28/1997,W,3,W3,540835,4187139,3,4.5,0.7,0.19,0.445,13.5,9.45,sand,NA,4,0,0,NA,NA,NA,NA,NA,
+2/28/1997,W,3.1,W3.1,540845,4187115,3,6.25,0.85,0.16,0.505,18.75,15.9375,sand,NA,2,0,0,NA,NA,NA,NA,NA,
+2/28/1997,W,3.2,W3.2,540829,4187160,3,4.5,1.01,0.2,0.605,13.5,13.635,sand,NA,2,1,0,NA,NA,NA,NA,NA,
+2/28/1997,W,4,W4,540882,4187083,3,4.4,0.24,0,0.12,13.2,3.168,sand,NA,0,0,0,NA,NA,NA,NA,NA,
+2/28/1997,W,5,W5,540974,4187008,3,5.6,0.28,0,0.14,16.8,4.704,sand,NA,0,0,0,NA,NA,NA,NA,NA,
+2/28/1997,W,5.1,W5.1,540982,4186990,3,5.3,0.62,0.15,0.385,15.9,9.858,sand,NA,0,1,0,NA,NA,NA,NA,NA,
+2/28/1997,NW,6.1,NW6.1,540935,4187183,3,3.5,1.03,0,0.515,10.5,10.815,mud,gravel,3,0,0,NA,NA,NA,NA,NA,
+2/28/1997,NW,6.2,NW6.2,540979,4187186,3,3.8,0.83,0.1,0.465,11.4,9.462,mud,NA,2,2,2,NA,NA,NA,NA,NA,
+2/28/1997,NW,7,NW7,540997,4187181,3,3.9,0.5,NA,0.5,11.7,5.85,silt,gravel,1,1,0,NA,NA,NA,NA,NA,
+2/28/1997,NW,8,NW8,541018,4187197,3,3.5,0.45,0.3,0.375,10.5,4.725,mud,NA,4,2,NA,NA,NA,NA,NA,NA,
+2/28/1997,NW,8.1,NW8.1,541086,4187187,3,3.2,0.33,0.24,0.285,9.6,3.168,silt,NA,4,1,NA,NA,NA,NA,NA,NA,
+2/28/1997,NW,8.2,NW8.2,541053,4187179,3,4.4,0.45,0.2,0.325,13.2,5.94,mud,NA,3,2,0,NA,NA,NA,NA,NA,
+2/28/1997,NW,8.3,NW8.3,541134,4187211,3,4.4,0.6,0.45,0.525,13.2,7.92,mud,NA,4,1,0,NA,NA,NA,NA,NA,
+3/2/1997,E,10,E10,541620,4187269,3,4.1,0.56,0.3,0.43,12.3,6.888,muck,NA,4,4,0,NA,NA,NA,NA,NA,
+3/2/1997,E,10.1,E10.1,541634,4187282,3,2.75,0.66,0.15,0.405,8.25,5.445,muck,NA,2,1,0,NA,NA,NA,NA,NA,
+3/2/1997,E,11,E11,541672,4187291,3,3,0.35,0.2,0.275,9,3.15,mud  ,NA,2,1,0,NA,NA,NA,NA,NA,
+3/2/1997,E,13.1,E13.1,541704,4187233,3,3.3,0.9,0.5,0.7,9.9,8.91,sand,gravel,0,0,0,NA,NA,NA,NA,NA,
+3/2/1997,E,13.2,E13.2,541715,4187215,3,2.7,0.9,0.5,0.7,8.1,7.29,sand,gravel,0,0,0,NA,NA,NA,NA,NA,exposed to wind/wave
+3/2/1997,E,13.3,E13.3,541717,4187184,3,2.5,0.7,0.45,0.575,7.5,5.25,NA,NA,0,3,0,NA,NA,NA,NA,NA,beach seine in dead cattail area.  Ne rolled slightly on bottom
+3/2/1997,E,13.4,E13.4,541700,4187175,3,2.3,0.92,0.58,0.75,6.9,6.348,muck,mud  ,NA,1,NA,NA,NA,NA,NA,NA,
+3/3/1997,SE,15,SE15,541333,4187041,3,3.3,0.55,0.4,0.475,9.9,5.445,muck,NA,2,0,0,NA,NA,NA,NA,NA,net rolled near end
+3/3/1997,SE,15.1,SE15.1,541403,4187067,3,4.8,0.3,0.1,0.2,14.4,4.32,sand,NA,4,1,0,NA,NA,NA,NA,NA,
+3/3/1997,SE,15.2,SE15.2,541299,4187051,3,4.1,0.7,0.18,0.44,12.3,8.61,sand,NA,2,1,0,NA,NA,NA,NA,NA,net rolled
+3/3/1997,SE,16,SE16,541511,4187123,3,4,0.5,0.32,0.41,12,6,muck,NA,1,2,0,NA,NA,NA,NA,NA,net rolled and tarp spilled (lost about 1/2 dozen fish)
+3/3/1997,SE,16.1,SE16.1,541461,4187122,3,4.5,0.65,0.1,0.375,13.5,8.775,sand,NA,4,0,0,NA,NA,NA,NA,NA,
+3/3/1997,SE,16.2,SE16.2,541558,4187130,3,3.3,0.55,0.1,0.325,9.9,5.445,sand,gravel,3,0,0,NA,NA,NA,NA,NA,
+3/3/1997,SE,16.3,SE16.3,541500,4187156,3,3.2,0.65,0.25,0.45,9.6,6.24,muck,NA,1,3,0,NA,NA,NA,NA,NA,
+9/17/1997,NW,6,NW6,540963,4187194,3,2.5,0.5,0.1,0.3,7.5,2.3,muck,gravel,0,1,0,NA,NA,NA,NA,NA,
+9/17/1997,W,1,W1,540761,4187219,3,3.6,0.5,0,0.25,10.8,2.7,mud,muck,1,0,1,NA,potamogeton,NA,"Ulva, Enteromorpha",NA,
+9/17/1997,W,1.1,W1.1,540727,4187229,3,3,0.5,0.1,0.3,9.0,2.7,sand,corophium,1,0,1,NA,potamogeton,NA,Enteromorpha,NA,
+9/17/1997,W,2,W2,540764,4187193,3,3.9,0.65,0,0.325,11.7,3.8,sand,corophium,NA,NA,NA,Present,NA,NA,NA,NA,
+9/17/1997,W,3,W3,540835,4187139,3.4,3.8,0.45,0,0.225,12.9,2.9,sand,corophium,NA,NA,NA,NA,NA,NA,NA,NA,
+9/17/1997,W,3.1,W3.1,540845,4187115,3.5,4.5,0.45,0,0.225,15.8,3.5,sand,NA,NA,NA,NA,NA,NA,NA,NA,NA,
+9/17/1997,W,3.2,W3.2,540829,4187160,3.5,3.3,0.6,0,0.3,11.6,3.5,sand,corophium,1,0,0,NA,potamogeton,NA,NA,NA,Washed muck (organic) in net so lost some fish
+9/17/1997,W,4,W4,540882,4187083,4,5.1,0.3,0,0.15,20.4,3.1,sand,NA,NA,NA,NA,NA,NA,NA,NA,NA,
+9/17/1997,W,5.1,W5.1,540982,4186990,4,5.4,0.35,0,0.175,21.6,3.8,sand,NA,0,0,1,NA,NA,NA,Enteromorpha,NA,
+9/18/1997,NW,6.2,NW6.2,540979,4187186,3,3,NA,0.1,0.1,9.0,0.9,gravel,NA,1,1,0,NA,potamogeton,sedges,NA,NA,
+9/18/1997,NW,8,NW8,541018,4187197,3,3,0.4,0.15,0.275,9.0,2.5,muck,NA,0,1,0,NA,NA,sedges,NA,NA,
+9/18/1997,NW,8.1,NW8.1,541086,4187187,3,2.4,0.44,0.1,0.27,7.2,1.9,muck,NA,1,1,0,NA,NA,NA,NA,NA,
+9/18/1997,NW,8.2,NW8.2,541053,4187179,3,3,1.6,0.5,1.05,9.0,9.5,muck,NA,1,1,0,NA,potamogeton,NA,NA,NA,
+9/19/1997,E,10,E10,541620,4187269,3,3.4,0.4,0.1,0.25,10.2,2.6,muck,NA,0,1,NA,Present,NA,sedges,NA,NA,
+9/19/1997,E,10.1,E10.1,541634,4187282,3,3.2,0.2,0,0.1,9.6,1.0,muck,NA,NA,NA,NA,NA,NA,NA,NA,NA,sieved
+9/19/1997,E,11,E11,541672,4187291,3,4,0.15,0,0.075,12.0,0.9,muck,mud,NA,NA,NA,NA,NA,NA,NA,NA,
+9/19/1997,E,12,E12,541220,4187244,3,3.25,0.61,NA,0.61,9.8,5.9,cobble,NA,1,1,0,NA,NA,NA,NA,NA,
+9/19/1997,E,13.1,E13.1,541704,4187233,3,4.6,0.35,NA,0.35,13.8,4.8,NA,NA,1,0,0,NA,potamogeton,NA,NA,NA,mud/sand/cobble all listed as dominant
+9/19/1997,E,13.3,E13.3,541717,4187184,3,3.6,0.27,NA,0.27,10.8,2.9,muck,NA,0,1,0,NA,NA,NA,NA,NA,
+9/19/1997,E,13.5,E13.5,541678,4187165,3,2.6,0.39,NA,0.39,7.8,3.0,muck,NA,0,1,0,NA,NA,sedges,NA,NA,
+9/19/1997,NE,12.1,NE12.1,541259,4187235,3,4.25,0.58,0,0.29,12.8,3.7,cobble,gravel,1,NA,NA,NA,NA,NA,NA,NA,
+9/19/1997,NE,12.2,NE12.2,541314,4187237,3,3.25,0.52,0.1,0.31,9.8,3.0,cobble,muck,1,1,0,NA,NA,NA,NA,NA,
+9/22/1997,SE,15,SE15,541333,4187041,3,3.5,0.5,0.17,0.335,10.5,3.5,muck,sand,1,2,0,Present,potamogeton,sedges,NA,NA,
+9/22/1997,SE,15.1,SE15.1,541403,4187067,3,2.7,0.47,0.17,0.32,8.1,2.6,muck,sand,1,1,0,Present,potamogeton,sedges,NA,NA,
+9/22/1997,SE,16,SE16,541511,4187123,3,2.7,0.24,0.14,0.19,8.1,1.5,muck,NA,0,1,0,NA,NA,sedges,NA,NA,anoxic conditions
+9/22/1997,SE,16.1,SE16.1,541461,4187122,3,2.8,0.29,0,0.145,8.4,1.2,sand,NA,3,0,0,Present,potamogeton,NA,NA,NA,Phytoplankton much more prevalent than other sites
+9/22/1997,SE,16.2,SE16.2,541558,4187130,3,3.1,0.35,0.1,0.225,9.3,2.1,muck,NA,1,1,0,Present,NA,sedges,NA,NA,"creosote log, oil on surface"
+10/6/1998,W,2,W2,540764,4187193,2,2.75,0.45,0,0.225,5.5,1.2375,muck (organic),NA,4,NA,NA,NA,potamogeton,NA,NA,NA,
+10/6/1998,W,2.3,W2.3,540740,4187203,3.4,3.5,1.25,0,0.625,11.9,7.4375,sand,gravel,1,1,1,NA,NA,NA,NA,NA,mysid shrimp
+10/6/1998,W,3,W3,540835,4187139,3.3,3.98,0.93,0,0.465,13.134,6.10731,sand,corophium,3,1,0,NA,potamogeton,Distichlis,NA,NA,mysid shrimp
+10/6/1998,W,3.1,W3.1,540845,4187115,3,4.25,0,NA,0,12.75,0,muck (organic),sand,3,1,NA,NA,potamogeton,Distichlis,NA,NA,mysid shrimp
+10/6/1998,W,3.2,W3.2,540829,4187160,2.85,4,0.3,0,0.15,11.4,1.71,sand,corophium,1,NA,NA,NA,NA,NA,NA,NA,
+10/6/1998,W,4,W4,540882,4187083,3.25,5,0.6,0,0.3,16.25,4.875,sand,corophium,0,0,1,NA,NA,NA,Spyrogyra?,NA,mysid shrimp
+10/6/1998,W,5,W5,540974,4187008,3.2,5.6,0.4,0,0.2,17.92,3.584,sand,NA,1,1,1,NA,NA,NA,NA,NA,lots of mysid shrimp.  Hard to seine because of wind
+10/6/1998,W,5.1,W5.1,540982,4186990,3.45,5.4,0.37,0,0.185,18.63,3.44655,sand,corophium,1,1,1,NA,NA,NA,NA,NA,mysid shrimp
+10/7/1998,E,10,E10,541620,4187269,3,3.9,0.45,0.3,0.375,11.7,4.3875,muck (organic),NA,1,2,0,NA,NA,NA,NA,NA,mysid shrimp
+10/7/1998,E,10.1,E10.1,541634,4187282,2.3,2.9,0.5,0.31,0.405,6.67,2.70135,muck (organic),NA,2,1,NA,NA,potamogeton,sedges,NA,NA,mysid shrimp
+10/7/1998,E,11,E11,541672,4187291,3,3.2,0.65,0.19,0.42,9.6,4.032,gravel,NA,1,2,0,NA,NA,sedges,NA,NA,mysid shrimp
+10/7/1998,E,13.1,E13.1,541704,4187233,2.25,3.3,0.2,0.13,0.165,7.425,1.225125,mud,gravel,2,2,0,NA,NA,NA,NA,NA,mysid shrimp.  Bottom is firmly packed. Called silt/clay--mud
+10/7/1998,E,13.2,E13.2,541715,4187215,2.25,3,0.65,0.15,0.4,6.75,2.7,muck (organic),gravel,1,2,0,NA,NA,NA,NA,NA,mysid shrimp. damselfly
+10/7/1998,E,13.3,E13.3,541717,4187184,2.6,3.4,0.8,0.25,0.525,8.84,4.641,muck (organic),mud,0,2,NA,NA,NA,NA,NA,NA,firm mud
+10/7/1998,E,13.4,E13.4,541700,4187175,2.7,3.7,0.71,0.25,0.48,9.99,4.7952,muck (organic),mud,0,3,0,NA,NA,NA,NA,NA,Sieved net to get muck (organic) out-- may have lost little fishes.  Firm mud
+10/7/1998,E,13.5,E13.5,541678,4187165,3,3.2,0.8,0.37,0.585,9.6,5.616,muck (organic),mud,1,1,0,NA,NA,NA,NA,NA,firm mud
+10/8/1998,NW,6,NW6,540963,4187194,3,3,0.93,0,0.465,9,4.185,mud,gravel,1,1,4,NA,NA,NA,floating green algae,NA,sample site partly on old concrete boat ramp.  Mysid shrimp
+10/8/1998,NW,6.1,NW6.1,540935,4187183,2.3,2.3,0.8,0,0.4,5.29,2.116,mud,gravel,2,0,4,NA,NA,NA,floating green algae,NA,
+10/8/1998,NW,6.2,NW6.2,540979,4187186,2.7,4.1,0.75,0.14,0.445,11.07,4.92615,muck (organic),gravel,3,1,4,NA,NA,sedges,floating green algae,NA,
+10/8/1998,NW,7,NW7,540997,4187181,3.5,4.4,0.65,0,0.325,15.4,5.005,muck (organic),gravel,2,1,4,NA,NA,rushes,floating green algae,NA,
+10/8/1998,NW,8,NW8,541018,4187197,2.45,3.3,0.54,0.27,0.405,8.085,3.274425,muck (organic),NA,1,2,0,NA,NA,NA,NA,NA,mysid shrimp
+10/8/1998,NW,8.1,NW8.1,541086,4187187,2.2,4.3,0.63,0.25,0.44,9.46,4.1624,muck (organic),NA,1,1,NA,NA,potamogeton,sedges,NA,NA,
+10/8/1998,NW,8.2,NW8.2,541053,4187179,2.65,3.5,0.5,0.22,0.36,9.275,3.339,muck (organic),NA,0,2,0,NA,NA,NA,NA,NA,mysid shrimp. Soupy green water with phytoplankton
+10/8/1998,NW,8.3,NW8.3,541134,4187211,3,4.2,0.65,0.39,0.52,12.6,6.552,muck (organic),NA,1,1,NA,NA,NA,NA,NA,NA,
+10/12/1999,W,118,W118,540954,4187016,3,6.3,0.45,0,0.225,18.9,4.2525,sand,NA,3,0,0,NA,NA,NA,NA,NA,
+10/12/1999,W,209,W209,540900,4187069,3,3.9,0.6,0,0.3,11.7,3.51,sand,NA,1,0,0,NA,NA,NA,NA,NA,
+10/12/1999,W,328,W328,540813,4187181,3,3.65,0.27,0,0.135,10.95,1.47825,sand,corophium,1,0,1,NA,NA,NA,NA,NA,
+10/12/1999,W,355,W355,540797,4187186,3,2.4,0.55,0,0.275,7.2,1.98,sand,NA,1,0,0,NA,NA,NA,NA,NA,
+10/12/1999,W,374,W374,540786,4187191,3,2.75,0.75,0,0.375,8.25,3.09375,sand,NA,0,0,0,NA,NA,NA,NA,NA,
+10/12/1999,W,454,W454,540714,4187209,3,3.45,0.55,0,0.275,10.35,2.84625,sand,NA,0,0,3,NA,NA,NA,NA,NA,
+10/12/1999,W,490,W490,540717,4187228,3,2.8,0.25,0,0.125,8.4,1.05,sand,muck (organic),1,0,4,NA,NA,NA,NA,NA,
+10/12/1999,W,604,W604,540814,4187202,3,2.4,1.07,0,0.535,7.2,3.852,sand,NA,4,0,0,NA,NA,NA,NA,NA,
+10/13/1999,NW,40,NW40,540902,4187186,3,2.25,0.47,0.35,0.41,6.75,2.7675,mud,sand,4,1,0,NA,NA,NA,NA,NA,
+10/13/1999,NW,125,NW125,540979,4187195,3,1.75,0.53,0.3,0.415,5.25,2.17875,gravel,NA,3,1,0,NA,NA,NA,NA,NA,
+10/13/1999,NW,129,NW129,540982,4187192,3,3.5,0.55,0,0.275,10.5,2.8875,gravel,NA,1,0,0,NA,NA,NA,NA,NA,
+10/13/1999,NW,171,NW171,541029,4187204,3,3.25,0.3,0,0.15,9.75,1.4625,muck (organic),mud,0,1,0,NA,NA,NA,NA,NA,
+10/13/1999,NW,248,NW248,541100,4187198,3,3.2,0.5,0.2,0.35,9.6,3.36,muck (organic),mud,0,1,0,NA,NA,NA,NA,NA,
+10/13/1999,NW,259,NW259,541107,4187201,3,2.2,0.4,0.2,0.3,6.6,1.98,muck (organic),sand,0,1,0,NA,NA,NA,NA,NA,
+10/13/1999,NW,270,NW270,541117,4187207,3,3.6,0.45,0.25,0.35,10.8,3.78,muck (organic),mud,1,2,0,NA,NA,NA,NA,NA,
+10/14/1999,E,52,E52,541605,4187269,3,2.7,0.4,0.15,0.275,8.1,2.2275,mud,muck (organic),3,1,0,NA,"ceratophyllum, potamogeton",scirpus,NA,NA,
+10/14/1999,E,54,E54,541608,4187272,3,2.2,0.31,NA,0.31,6.6,n.a.,muck (organic),mud,0,2,0,NA,NA,NA,NA,NA,
+10/14/1999,E,60,E60,541613,4187276,3,2.65,0.25,0.15,0.2,7.95,1.59,muck (organic),mud,0,1,0,NA,NA,NA,NA,NA,
+10/14/1999,E,123,E123,541681,4187277,3,3.82,0.41,0.2,0.305,11.46,3.4953,mud,muck (organic),1,1,0,NA,NA,NA,NA,NA,
+10/14/1999,E,186,E186,541714,4187215,3,2.9,0.7,0.42,0.56,8.7,4.872,muck (organic),cobble,4,0,0,NA,"ceratophyllum, potamogeton",NA,NA,NA,
+10/10/2000,W,76,W76,540942,4187040,3,1,0.3,0.25,0.275,3,0.83,sand,NA,4,0,0,Present,NA,NA,NA,NA,
+10/10/2000,W,154,W154,540885,4187095,3,1.65,0.45,0.15,0.3,4.95,1.49,sand,NA,3,0,0,Present,NA,NA,NA,NA,
+10/10/2000,W,330,W330,540770,4187197,3,2,0.63,0,0.315,6,1.89,sand,NA,4,0,0,NA,NA,NA,NA,NA,
+10/10/2000,W,354,W354,540756,4187210,3,2.5,1.05,0,0.525,7.5,3.94,sand,NA,0,0,0,NA,NA,NA,NA,NA,mysid shrimp
+10/10/2000,W,610,W610,540843,4187201,3,1.6,0.5,0.2,0.35,4.8,1.68,muck (organic),NA,4,3,0,Present,NA,NA,NA,NA,
+10/11/2000,E,73,E73,541612,4187272,3,3,0.3,0.23,0.265,9,2.39,muck (organic),NA,3,0,0,NA,ceratophyllum,NA,NA,NA,sieved out muck (organic)
+10/11/2000,NW,97,NW97,540968,4187193,3,2,0.6,0.2,0.4,6,2.40,muck (organic),cobble,4,2,0,Present,NA,NA,NA,NA,
+10/11/2000,NW,115,NW115,540982,4187182,3,2.3,0.46,0,0.23,6.9,1.59,gravel,NA,4,1,0,Present,NA,NA,NA,NA,
+10/11/2000,NW,152,NW152,541019,4187195,3,2.45,0.55,0.12,0.335,7.35,2.46,muck (organic),NA,0,1,0,Present,NA,NA,NA,NA,
+10/11/2000,NW,241,NW241,541086,4187192,3,1.4,0.25,0.15,0.2,4.2,0.84,muck (organic),NA,1,0,0,NA,ceratophyllum,NA,NA,NA,net rolled
+10/11/2000,NW,341,NW341,541144,4187223,3,1.85,0.45,0,0.225,5.55,1.25,gravel,muck (organic),0,0,0,NA,NA,NA,NA,NA,
+10/19/2005,NW,86,NW86,541102,4187194,2.9,3.8,0.45,0.10,0.28,11.0,3.0,mud,gravel,0,2,4,NA,NA,NA,NA,NA,
+10/19/2005,NW,240,NW240,540985,4187185,3.2,3.4,0.70,0.10,0.40,10.9,4.4,gravel,NA,2,1,4,NA,NA,NA,NA,NA,
+10/19/2005,NW,248,NW248,540978,4187192,3,3.1,0.70,0.15,0.43,9.3,4.0,muck (organic),gravel,2,1,4,NA,NA,NA,NA,NA,
+10/19/2005,NW,305,NW305,540922,4187185,3.2,4.2,0.40,0.15,0.28,13.4,3.7,muck (organic),NA,0,1,4,NA,NA,NA,NA,NA,
+10/19/2005,NW,313,NW313,540911,4187190,2.8,3.75,0.35,0.15,0.25,10.5,2.6,muck (organic),NA,0,1,4,NA,NA,NA,NA,NA,quarter of adult gobies have internal white lesions/parasites
+10/19/2005,W,61,W61,540806,4187205,3.4,3.2,1.20,0.25,0.73,10.9,7.9,muck (organic),sand,1,0,4,NA,NA,NA,NA,NA,"lots of amphipods, possible parasites, multiple pics of parasite growths on tidewater goby.  Sampling site NE side of footbridge by lagoon"
+10/19/2005,W,185,W185,540691,4187244,2.4,3.3,0.25,0.00,0.13,7.9,1.0,sand,gravel,0,0,4,NA,NA,NA,NA,NA,midge exuvia
+10/19/2005,W,354,W354,540722,4187203,3.6,3.2,0.05,0.00,0.03,11.5,0.3,sand,gravel,1,0,2,NA,NA,NA,NA,NA,schooling juvenile gobies moving out of sampling area.  Got video
+10/19/2005,W,640,W640,540930,4187048,3.1,3.3,0.85,0.00,0.43,10.2,4.3,sand,gravel,0,0,3,NA,NA,NA,NA,NA,photos taken of male and female tidewater gobies
+10/21/2005,E,43,E43,541646,4187168,2.9,5.6,0.65,0.20,0.43,16.2,6.9,muck (organic),NA,0,1,3,NA,NA,NA,NA,NA,1 juvenile CA red-legged frog seen.  Very few amphipods in seine.  Bottom very muck (organic)y 
+10/21/2005,E,60,E60,541659,4187163,3.3,3.8,0.60,0.20,0.40,12.5,5.0,muck (organic),mud,1,1,3,NA,NA,NA,NA,NA,4 juvenile CA red-legged frog seen (50 mm snout-vent length).
+10/21/2005,E,224,E224,541698,4187263,3.25,4,0.60,0.15,0.38,13.0,4.9,mud,gravel,1,1,3,NA,NA,NA,NA,NA,Lots of amphipods
+10/21/2005,E,348,E348,541611,4187275,3.45,4.5,0.75,0.25,0.50,15.5,7.8,muck (organic),mud,0,1,2,NA,NA,NA,NA,NA,
+10/21/2005,E,364,E364,541602,4187261,3.9,5.3,0.55,0.20,0.38,20.7,7.8,muck (organic),NA,0,1,2,NA,NA,NA,NA,NA,"Lots of amphipods, bloodworms in the muck (organic)"
+10/16/2006,NW,339,NW339,540899,4187199,2.8,3,0.50,0.35,0.43,8.4,3.6,muck (organic),mud,1,1,4,NA,NA,NA,NA,NA,SAV taxa-Potamogeton;digital photos of habitat looking shoreward; Net rolled on bottom; UTM coordinates from 2004 county air photo.
+10/16/2006,NW,354,NW354,540851,4187218,3.1,2.7,0.57,0.40,0.49,8.4,4.1,mud,muck (organic),2,2,1,NA,NA,NA,NA,NA,EAV taxa-Sedges
+10/16/2006,W,125,W125,540766,4187231,3.95,4.45,0.92,0.10,0.51,17.6,9.0,muck (organic),sand,3,1,2,NA,NA,NA,NA,NA,SAV taxa-Potamogeton; EAV taxa-Sedge; Algae taxa-Microcystis
+10/16/2006,W,297,W297,540779,4187195,2.45,3.3,1.10,0.00,0.55,8.1,4.4,sand,NA,0,0,3,NA,NA,NA,NA,NA,
+10/16/2006,W,361,W361,540823,4187151,3.1,2.6,0.70,0.40,0.55,8.1,4.4,muck (organic),sand,3,1,2,NA,NA,NA,NA,NA,SAV taxa-Potamogeton; EAV taxa-Sedge; Algae taxa-Microcystis
+10/16/2006,W,406,W406,540843,4187110,3.25,2.75,0.75,0.40,0.58,8.9,5.1,sand,muck (organic),3,1,2,NA,NA,NA,NA,NA,SAV taxa-Potamogeton; EAV taxa-rushes; Algae taxa-Microcystis
+10/16/2006,W,442,W442,540861,4187105,3.7,3.35,1.07,0.23,0.65,12.4,8.1,sand,NA,0,1,NA,NA,NA,NA,NA,NA,
+10/17/2006,E,328,E328,541606,4187284,2.85,3.5,0.80,0.60,0.70,10.0,7.0,muck (organic),NA,1,1,1,NA,NA,NA,NA,NA,
+10/17/2006,E,362,E362,541591,4187264,2.5,2.7,1.00,0.50,0.75,6.8,5.1,muck (organic),NA,1,1,0,NA,NA,NA,NA,NA,
+10/17/2006,NW,39,NW39,541128,4187230,2.8,3.25,0.65,0.45,0.55,9.1,5.0,muck (organic),NA,3,1,1,NA,NA,NA,NA,NA,SAV taxa-Potamogeton
+10/17/2006,NW,56,NW56,541106,4187224,3.75,3,0.65,0.35,0.50,11.3,5.6,muck (organic),NA,3,1,1,NA,NA,NA,NA,NA,SAV taxa-Potamogeton
+9/18/2007,E,38,E38,541655,4187168,3.25,3.65,0.45,0.11,0.28,11.86,3.32,muck (organic),NA,2,1,0,NA,NA,NA,NA,NA,SAV taxa-Potamogeton; EAV taxa-Sedge; lots of chironomids and amphipods
+9/18/2007,E,76,E76,541682,4187175,3.10,3.80,0.50,0.10,0.30,11.78,3.53,muck (organic),NA,1,1,0,NA,NA,NA,NA,NA,"SAV taxa-Potamogeton; EAV taxa-Sedge, Juvenile red-legged frog present in water"
+9/18/2007,E,144,E144,541709,4187228,3.00,4.80,0.45,0.15,0.30,14.40,4.32,muck (organic),NA,3,0,0,NA,NA,NA,NA,NA,"SAV taxa-Potamogeton, amphipoda and chironomids present"
+9/18/2007,E,355,E355,541602,4187276,3.10,4.70,0.60,0.20,0.40,14.57,5.83,muck (organic),NA,1,1,0,NA,NA,NA,NA,NA,"SAV taxa-Potamogeton, EAV taxa-Sedge"
+9/18/2007,E,361,E361,541590,4187276,3.00,3.30,0.45,0.10,0.28,9.90,2.72,muck (organic),NA,3,0,0,NA,NA,NA,NA,NA,"SAV taxa-Potamogeton, prolific amphipoda and blood worms, net rolled up at bottom during seine in Potamogeton area, saw juvenile frog jump in water-possible red-legged frog"
+9/18/2007,W,1,W1,540856,4187196,3.05,5,0.37,0.10,0.24,15.3,3.6,muck (organic),NA,1,1,0,NA,NA,NA,NA,NA,"SAV taxa-Potamogeton; EAV taxa-Sedge, circled lengths are gobies w/ microsporidia"
+9/18/2007,W,4,W4,540845,4187198,3,4.2,0.55,0.10,0.33,12.6,4.1,sand,muck (organic),1,1,0,NA,NA,NA,NA,NA,"SAV taxa-Potamogeton; EAV taxa-Sedge, prolific w/ amphipoda, some chironomids"
+9/18/2007,W,26,W26,540829,4187197,2.6,2.8,1.05,0.25,0.65,7.3,4.7,muck (organic),mud,1,1,0,NA,NA,NA,NA,NA,"SAV taxa-Potamogeton; EAV taxa-Sedge, prolific w/ amphipoda and chironomids"
+9/18/2007,W,205,W205,540752,4187202,3.35,3.85,0.57,0.23,0.40,12.9,5.2,muck (organic),sand,1,0,0,NA,NA,NA,NA,NA,"SAV taxa-Potamogeton. Prolific w/ chironomids, many amphipoda"
+9/20/2007,NW,5,NW5,541174,4187229,3.25,3,0.70,0.00,0.35,9.8,3.4,muck (organic),gravel,1,0,1,NA,NA,NA,NA,NA,SAV taxa-Potamogeton; Algae taxa-Microcystis. w/ lots of amphipods
+9/20/2007,NW,8,NW8,541168,4187232,3,3.75,0.50,0.05,0.28,11.3,3.1,muck (organic),gravel,2,0,2,NA,NA,NA,NA,NA,SAV taxa-Potamogeton; Algae taxa-Microcystis. w/ lots of gammurid amphipods
+9/20/2007,NW,51,NW51,541130,4187226,3,4.5,0.35,0.10,0.23,13.5,3.0,muck (organic),NA,3,0,2,NA,NA,NA,NA,NA,"SAV taxa-Potamogeton; Algae taxa-Microcystis. Juvenile mouth goes to center of eye, blood worms, water turbid"
+9/20/2007,NW,75,NW75,541116,4187208,3,4.25,0.40,0.08,0.24,12.8,3.1,muck (organic),NA,2,1,1,NA,NA,NA,NA,NA,SAV taxa-Potamogeton; EAV taxa-Sedge; Algae taxa-Microcystis 
+9/20/2007,NW,88,NW88,541101,4187202,2.80,4.10,0.35,0.10,0.23,11.48,2.58,muck (organic),gravel,2,1,1,NA,NA,NA,NA,NA,SAV taxa-Potamogeton; EAV taxa-Sedge; Algae taxa-Microcystis
+9/20/2007,W,29,W29,540838,4187199,3.2,3,1.00,0.38,0.69,9.6,6.6,muck (organic),NA,1,1,1,NA,NA,NA,NA,NA,SAV taxa-Potamogeton; EAV taxa-Sedge; Algae-Microcystis w/ lots of amphipods
+10/21/2008,E,49,E49,541667,4187171,3.5,3.6,0.40,0.15,0.28,12.6,3.5,muck (organic),NA,4,0,0,NA,NA,NA,NA,NA,"Abundant isopod, amphipod (gammarid).  Seine difficult- rolled over veg"
+10/21/2008,E,157,E157,541703,4187234,4.5,6.2,0.45,0.10,0.28,27.9,7.8,muck (organic),NA,4,0,0,NA,NA,NA,NA,NA,Amphipod (gammarid_. Isopod. Dragonfly larvae. Pic # 1997
+10/21/2008,E,205,E205,541684,4187272,3.3,4.3,0.55,0.05,0.30,14.2,4.3,mud,gravel,NA,NA,NA,NA,NA,NA,NA,NA,"4 river otters under bridge.  Pic 1999 - 2000 amphipod, isopod. Net rolled over veg.  HAB - 1998"
+10/21/2008,E,331,E331,541591,4187262,2.6,3.2,0.52,0.00,0.26,8.3,2.2,muck (organic),NA,4,NA,NA,NA,NA,NA,NA,NA,"Deep muck (organic), Pick 2001 for Habitat. Thick SAV, net rolled. Amphipds and isopods."
+10/21/2008,E,360,E360,541570,4187253,2.9,3.9,0.39,0.08,0.24,11.3,2.7,muck (organic),NA,4,NA,1,NA,NA,NA,NA,NA,Amphipods and isopods. Net rolled over veg.
+10/22/2008,W,84,W84,540800,4187205,3.45,3,0.85,0.00,0.43,10.4,4.5,muck (organic),NA,2,0,0,NA,NA,NA,NA,NA,"2 isopod taxa: Corophium and Gnorimosphaeroma.  Amphipods, bryzoan on Potamogeton (pics + sample), Pic # 2002-Hab w/poles marking sampling area.  Net was ok - minimal rolling"
+10/22/2008,W,197,W197,540773,4187195,2.9,2.8,0.60,0.00,0.30,8.1,2.4,sand,NA,3,NA,NA,NA,NA,NA,NA,NA,net OK
+10/22/2008,W,291,W291,540840,4187140,2.6,3.1,0.45,0.00,0.23,8.1,1.9,sand,muck (organic),3,0,0,NA,NA,NA,NA,NA,net rolled on bottom. Amphipods and isopod - Corophium + Gronio
+10/22/2008,W,399,W399,540902,4187069,3.10,3.70,0.60,0.00,0.30,11.50,3.40,sand,NA,3,NA,NA,NA,NA,NA,NA,NA,isopods + amphipod.  No corophium seen. Pics # 207
+10/22/2008,W,456,W456,540951,4187041,3.50,3.60,0.41,0.00,0.21,12.60,2.70,sand,NA,1,0,0,NA,NA,NA,NA,NA,seine perfect. Amphipod and isopods.  Took many goby photos
+10/24/2008,NW,79,NW79,541103,4187193,3.00,2.60,0.30,0.05,0.18,7.80,1.40,gravel,mud,4,NA,NA,NA,NA,NA,NA,NA,Hab pic # 2026. Amphipds and isopods. Net rolled on bottom.
+10/24/2008,NW,159,NW159,541042,4187189,2.70,2.75,0.45,0.00,0.23,7.40,1.70,muck (organic),gravel,4,0,0,NA,NA,NA,NA,NA,"Net ok, pulled veg} shaked"
+10/24/2008,NW,317,NW317,540911,4187182,2.70,3.30,0.28,0.00,0.14,8.90,1.30,muck (organic),gravel,4,0,0,NA,NA,NA,NA,NA,"Net rolled, although not horribly. Hab pic"
+10/24/2008,NW,359,NW359,540882,4187193,3.10,4.10,0.25,0.00,0.13,12.70,1.70,muck (organic),sand,4,0,0,NA,NA,NA,NA,NA,Hab pic # 2029.  Net rolled in veg.
+10/24/2008,NW,368,NW368,540870,4187196,2.80,4.20,0.25,0.00,0.13,11.80,1.50,muck (organic),sand,4,0,0,NA,NA,NA,NA,NA,Net rolled.  Habitat Pic #2030. 1 rat tail maggot
+10/6/2009,NW,46,NW46,541130,4187234,3.00,3.30,0.10,0.00,0.05,9.9,0.50,muck (organic),NA,0,0,3,NA,NA,NA,NA,NA,Anoxic muck (organic).  Bloodworms.  Few invertebrates
+10/6/2009,NW,147,NW147,541060,4187189,3,2.8,0.40,0.10,0.25,8.4,2.10,muck (organic),NA,4,0,0,NA,NA,NA,NA,NA,net rolled on seine due to dense SAV
+10/6/2009,NW,172,NW172,541034,4187200,3,3.4,0.20,0.00,0.10,10.2,1.02,muck (organic),NA,2,0,2,NA,NA,NA,NA,NA,lots of dragonfly larvae.  Orange oxide stain on bank.  Very muck (organic)y.  Numerous gobies swam outside sampled area as we approached.
+10/6/2009,NW,290,NW290,540928,4187188,3,2.8,0.25,0.00,0.13,8.4,1.05,muck (organic),NA,1,0,0,NA,NA,NA,NA,NA,Gammarid amphipod
+10/6/2009,NW,380,NW380,540866,4187199,3,2.4,0.30,0.00,0.15,7.2,1.08,mud,sand,4,0,0,NA,NA,NA,NA,NA,Gnorimosphaeroma isopod.  Gammarid amphipod.
+10/6/2009,W,51,W51,540831,4187199,3,3.75,0.55,0.00,0.28,11.3,3.09,muck (organic),sand,3,0,0,NA,NA,NA,NA,NA,Gnorimosphaeroma isopod.  Gammarid amphipod.
+10/6/2009,W,343,W343,540867,4187099,3.00,2.50,0.50,0.20,0.35,7.5,2.63,sand,NA,4,1,0,NA,NA,NA,NA,NA,dead gull-just feathers.  Gnorimosphaeroma isopod.  Gammarid amphipod.
+10/6/2009,W,468,W468,540947,4187022,3.00,3.50,0.45,0.00,0.23,10.5,2.36,sand,NA,1,0,0,NA,NA,NA,NA,NA,Lots of female gobies
+10/6/2009,W,477,W477,540955,4187011,3.00,2.25,0.35,0.00,0.18,6.8,1.18,sand,NA,4,0,0,NA,NA,NA,NA,NA,net rolled slightly
+10/8/2009,E,32,E32,541632,4187159,3.00,2.70,0.38,0.00,0.19,8.1,1.54,muck (organic),sand,4,0,0,NA,NA,NA,NA,NA,SAV: EAV: Algae: 
+10/8/2009,E,55,E55,541659,4187159,3.00,2.80,0.29,0.00,0.15,8.4,1.22,muck (organic),sand,2,1,0,NA,NA,NA,NA,NA,
+10/8/2009,E,158,E158,541720,4187215,3.00,2.70,0.25,0.10,0.18,8.1,1.42,muck (organic),NA,1,0,0,NA,NA,NA,NA,NA,Bloodworms.  Pulled up before shore
+10/8/2009,E,315,E315,541632,4187292,3.00,3.80,0.25,0.05,0.15,11.4,1.71,muck (organic),NA,0,0,1,NA,NA,NA,NA,NA,anoxic muck (organic).  Bloodworms.  
+10/8/2009,E,338,E338,541614,4187281,3.00,2.40,0.20,0.00,0.10,7.2,0.72,muck (organic),NA,1,0,1,NA,NA,NA,NA,NA,"Blue Angels flying. Anoxic sediments, bloodworms"
+10/8/2009,W,523,W523,540964,4186978,3.00,3.30,0.28,0.05,0.17,9.9,1.63,sand,NA,4,0,0,NA,NA,NA,NA,NA,
+9/27/2010,NW,330,NW330,540894,4187201,3.00,2.25,0.25,0.15,0.20,6.8,1.35,muck (organic),sand,4,1,4,NA,NA,NA,NA,NA,"SAV: Potamogeton, EAV: Sedge, Algae: Microcystis?, Enteromorpha. Bloodworms present"
+9/27/2010,W,128,W128,540743,4187232,3.00,2.10,0.22,0.00,0.10,6.3,0.63,muck (organic),sand,4,0,4,NA,NA,NA,NA,NA,"SAV: Potamogeton, , Algae: Enteromorpha, Microcystis?."
+9/27/2010,W,369,W369,540688,4187228,3.00,3.60,0.15,0.00,0.05,10.8,0.54,sand,NA,0,0,0,NA,NA,NA,NA,NA,
+9/27/2010,W,402,W402,540717,4187214,3.00,4.00,0.15,0.00,0.08,12.0,0.90,sand,NA,0,0,4,NA,NA,NA,NA,NA,Algae: Enteromorpha
+9/27/2010,W,570,W570,540838,4187123,3.00,3.90,0.70,0.25,0.48,11.7,5.56,sand,muck (organic),4,1,4,NA,NA,NA,NA,NA,Algae: Microcystis?  Midge hatch.  Otter here just before arrival.  Herring-size egg masses- see pics
+9/27/2010,W,729,W729,540951,4187020,3.00,4.90,0.80,0.00,0.40,14.7,5.88,sand,muck (organic),4,0,4,NA,NA,NA,NA,NA,"SAV: Potamogeton, Algae:  Microcystis?. Midge exuvia"
+9/28/2010,E,5,E5,541616,4187170,3.00,2.15,0.54,0.15,0.35,6.5,2.23,mud,NA,3,1,4,NA,NA,NA,NA,NA,"SAV: Potamogeton, EAV: Sedge, Algae: Microcystis?"
+9/28/2010,E,50,E50,541651,4187160,3.00,2.00,0.60,0.39,0.50,6.0,2.97,muck (organic),NA,1,1,4,NA,NA,NA,NA,NA,"SAV: Potamogeton, EAV: Sedge, Algae: Microcystis?.  Sieved seine"
+9/28/2010,E,305,E305,541633,4187300,3.00,2.50,0.51,0.40,0.46,7.5,3.41,muck (organic),NA,1,1,4,NA,NA,NA,NA,NA,"SAV: Potamogeton, EAV: Sedge, Algae: Enteromorpha.  Bllodworms present.  Super muck (organic)y-hard to see fish in net.  Sieved seine."
+9/28/2010,E,350,E350,541606,4187277,3.00,2.30,0.29,0.10,0.20,6.9,1.35,muck (organic),NA,1,0,4,NA,NA,NA,NA,NA, Algae: Enteromorpha
+9/28/2010,E,354,E354,541601,4187275,3.00,2.40,0.35,0.15,0.25,7.2,1.80,muck (organic),NA,1,0,4,NA,NA,NA,NA,NA,"SAV: Potamogeton, EAV: Sedge, Algae: Enteromorpha, Microcystis?."
+9/28/2010,NW,74,NW74,541114,4187216,3.00,2.10,0.60,0.47,0.55,6.3,3.43,muck (organic),NA,1,1,4,NA,NA,NA,NA,NA,"SAV: Potamogeton, EAV: Sedge, Algae: Microcystis?. Bloodworms. Really muck (organic)y.  Sieved.  May have lost smallest fish"
+9/28/2010,NW,125,NW125,541079,4187184,3.00,2.40,0.52,0.32,0.42,7.2,3.02,muck (organic),gravel,1,1,4,NA,NA,NA,NA,NA,"SAV: Potamogeton, EAV: Sedge, Algae: Microcystis?. "
+9/28/2010,NW,238,NW238,540978,4187201,3.00,2.90,0.50,1.50,1.00,8.7,8.70,gravel,NA,3,2,4,NA,NA,NA,NA,NA,"SAV: Potamogeton, EAV: Sedge, Algae: Microcystis?. Photo#2392. Midge exuvia."
+9/28/2010,NW,253,NW253,540962,4187201,3.00,2.50,0.68,0.35,0.52,7.5,3.86,gravel,muck (organic),1,1,4,NA,NA,NA,NA,NA,"SAV: Potamogeton, EAV: Sedge, Algae: Microcystis?. "
+9/29/2011,W,61,W61,540811,4187204,3.00,3.20,1.15,0.00,0.58,9.6,5.52,sand,NA,4,0,0,NA,potamogeton,NA,NA,NA,"Net rolled with vegetation, missed some fish"
+9/29/2011,W,318,W318,540662,4187235,3.00,5.30,0.45,0.00,0.23,15.9,3.58,sand,NA,1,0,1,NA,NA,NA,NA,NA,seine pass ok
+9/29/2011,W,503,W503,540821,4187165,3.00,3.20,0.61,0.04,0.32,9.6,3.10,sand,NA,4,0,0,NA,potamogeton,NA,NA,NA,"didn't sample emergent veg, too dense"
+9/29/2011,W,635,W635,540895,4187070,3.00,2.70,1.05,0.60,0.83,8.1,6.68,sand,NA,4,0,0,NA,potamogeton,NA,NA,NA,net rolled  
+9/29/2011,W,668,W668,540923,4187053,3.00,2.30,1.05,0.00,0.53,6.9,3.62,sand,NA,0,0,1,NA,NA,NA,NA,NA,"15 brown pelicans middle west portion of lagon bathing, seine net rolled. Did not sample EAV, too dense"
+9/30/2011,E,0,E0,541577,4187256,3.00,3.50,0.75,0.55,0.65,10.5,6.83,mud,sand,4,0,0,NA,potamogeton,NA,NA,NA,"net rolled, some water fern as veg cover"
+9/30/2011,E,6,E06,541583,4187258,3.00,3.20,0.75,0.50,0.63,9.6,6.00,mud,sand,4,0,0,NA,potamogeton,NA,NA,NA,"pulled up nets before EAV, didn't include. Net rolled"
+9/30/2011,E,87,E87,541640,4187307,3.00,3.90,0.60,0.50,0.55,11.7,6.44,muck (organic),sand,4,1,0,NA,potamogeton,NA,NA,NA,net rolled
+9/30/2011,E,148,E148,541682,4187279,3.10,3.00,0.75,0.35,0.55,9.3,5.12,gravel,NA,4,0,0,NA,potamogeton,NA,NA,NA,"net really pulled. 1CRLF juv from last year, 1 CRLF 32 uu"
+9/30/2011,E,347,E347,541629,4187160,3.00,2.63,0.76,0.55,0.66,7.9,5.17,muck (organic),NA,4,0,0,NA,potamogeton,NA,NA,NA,"net rolled, otter droppings, 2 CRLF seen on hike from e143 (juv)"
+9/30/2011,NW,36,NW36,541141,4187221,3.10,3.00,0.95,0.55,0.75,9.3,6.98,muck (organic),gravel,4,0,0,NA,NA,NA,NA,NA,net really rolled
+9/30/2011,NW,63,NW63,541122,4187206,3.00,2.90,0.80,0.60,0.70,8.7,6.09,muck (organic),sand,4,1,0,NA,potamogeton,NA,NA,NA,
+9/30/2011,NW,74,NW74,541111,4187199,2.90,3.20,0.80,0.55,0.68,9.3,6.26,mud,gravel,4,1,0,NA,potamogeton,NA,NA,NA,net rolled
+9/30/2011,NW,199,NW199,541017,4187201,4.00,3.00,1.00,0.71,0.86,12.0,10.26,gravel,muck (organic),4,0,0,NA,NA,NA,NA,NA,net rolled
+9/30/2011,NW,315,NW315,540912,4187190,3.00,2.50,0.65,0.50,0.58,7.5,4.31,sand,muck (organic),4,1,3,NA,potamogeton,NA,NA,NA,net rolled
+9/27/2012,NW,38,NW38,541140,4187225,3.30,5.60,0.60,0.00,0.30,18.5,5.5,muck (organic),NA,0,1,0,NA,NA,sedges,NA,NA,Bobcat in Marsh pic# 6835. Bird carcasses along way pic# 6836-6837
+9/27/2012,NW,160,NW160,541047,4187188,3.90,5.50,0.65,0.10,0.38,21.5,8.0,muck (organic),sand,2,0,0,NA,potamogeton,NA,NA,NA,Photo # 6834
+9/27/2012,NW,188,NW188,541023,4187200,3.00,4.80,0.40,0.00,0.20,14.4,2.9,muck (organic),NA,1,0,0,NA,potamogeton,NA,NA,NA,pic: 6833
+9/27/2012,NW,236,NW236,540978,4187193,3.00,4.40,0.58,0.00,0.29,13.2,3.8,gravel,muck (organic),1,0,0,NA,NA,NA,NA,NA,lots of small bits of garbage. Pic: 6831-6832
+9/27/2012,NW,333,NW333,540892,4187192,3.70,4.90,0.30,0.00,0.15,18.1,2.7,mud,sand,1,0,0,NA,potamogeton,NA,NA,NA,Small creosote. Pic: 6829-6830
+9/27/2012,W,25,W25,540842,4187197,3.30,3.70,0.60,0.00,0.30,12.2,3.7,sand,mud,2,0,0,NA,potamogeton,NA,NA,NA,Galvanized chain link fence on bottom. Pic: 6824. Pic 6825-6826 (Creosote sheen)
+9/27/2012,W,78,W78,540793,4187209,3.80,4.00,0.75,0.00,0.38,15.2,5.7,mud,sand,3,0,0,NA,potamogeton,NA,NA,NA,pic: 6822-6823
+9/27/2012,W,102,W102,540770,4187222,3.30,5.10,0.38,0.00,0.19,16.8,3.2,sand,muck (organic),3,0,0,NA,potamogeton,NA,NA,NA,Wave overwash near neck of lagoon mouth. Algae wrack present. Pic: 6815-6818
+9/27/2012,W,239,W239,540807,4187182,3.30,5.80,0.70,0.00,0.35,19.1,6.7,sand,mud,1,0,0,NA,potamogeton,NA,NA,NA,Lots of amphipods
+9/27/2012,W,440,W440,540929,4187052,3.30,4.50,0.95,0.00,0.48,14.9,7.1,sand,mud,0,0,0,NA,NA,NA,NA,NA,Circled TW std length when visible microsporidia seen. Only inspected gobies measured for lengths. Measured 1st 20 gobies for std. length. Measured 1st 10 fish for total length.
+9/28/2012,E,51,E51,541616,4187283,3.30,6.30,0.30,0.00,0.15,20.8,3.1,muck (organic),NA,0,0,0,NA,NA,NA,NA,NA,No invertabrates in muck (organic). Photo 6838-6840
+9/28/2012,E,86,E86,541643,4187305,3.30,6.30,0.25,0.00,0.13,20.8,2.6,muck (organic),NA,0,0,0,NA,NA,NA,NA,NA,No invertabrates . Photo 6841
+9/28/2012,E,178,E178,541695,4187260,3.30,5.20,0.33,0.00,0.17,17.2,2.9,gravel,muck (organic),3,0,0,NA,NA,NA,NA,NA,Lots of invertabrates (dragonfly larvae) photo 6842
+9/28/2012,E,296,E296,541687,4187172,3.30,6.00,0.35,0.00,0.18,19.8,3.56,muck (organic),NA,1,0,0,NA,NA,NA,NA,NA,Net rolled. Lots of invertabrates! Blood worms. Photo 6843
+9/28/2012,E,349,E349,541637,4187168,3.30,5.10,0.55,0.00,0.28,16.8,4.71,muck (organic),NA,3,0,0,NA,NA,NA,NA,NA,Lots of female gobies. Photo 6844
+9/25/2013,W,52,W52,540815,4187201,3.00,3.00,0.95,0.20,0.58,9.0,5.2,mud,gravel,4,0,0,NA,NA,NA,NA,NA,Photo #6 Amphipods & Isopods present
+9/25/2013,W,59,W59,540806,4187204,2.50,3.20,0.80,0.10,0.45,8.0,3.6,mud,gravel,4,0,0,NA,NA,NA,NA,NA,Photo #5 Seine Rolled at bottom when pulling up to beach. Did not resample
+9/25/2013,W,208,W208,540825,4187168,3.05,3.30,0.55,0.05,0.30,10.1,3.0,sand,mud,4,0,0,NA,NA,NA,NA,NA,Photo #4 Amphipods & Isopods present
+9/25/2013,W,277,W277,540852,4187113,2.50,2.60,0.40,0.05,0.23,6.5,1.5,sand,NA,4,0,0,NA,potamogeton,NA,NA,NA,"1st try net rolled at bottom, resampled same location. 2 photos taken (002-003)"
+9/25/2013,W,408,W408,540952,4187038,3.00,3.00,0.40,0.05,0.23,9.0,2.0,sand,NA,4,0,0,NA,potamogeton,NA,NA,NA,-
+9/26/2013,NW,16,NW16,541160,4187228,3.25,2.90,0.37,0.05,0.21,9.4,2.0,mud,NA,4,0,0,NA,NA,NA,NA,NA,"Photo 11 Amphipods & Isopods present. A lot of old trash (e.g. bottles, tires). Net rolled on bottom."
+9/26/2013,NW,71,NW71,541115,4187203,2.60,3.70,0.20,0.00,0.10,9.6,1.0,mud,gravel,3,0,0,NA,NA,NA,NA,NA,Amphipods present
+9/26/2013,NW,91,NW91,541097,4187193,3.00,3.80,0.35,0.00,0.18,11.4,2.0,muck (organic),gravel,3,0,0,NA,NA,NA,NA,NA,Photo #10 Amphipods present. SAV also less dense than other sites 
+9/26/2013,NW,150,NW150,541053,4187184,2.75,3.50,0.55,0.25,0.40,9.6,3.9,muck (organic),gravel,4,0,0,NA,NA,NA,NA,NA,Photo #9 Amphipods & isopods present.
+9/26/2013,NW,323,NW323,540898,4187187,3.00,3.80,0.25,0.00,0.13,11.4,1.4,sand,mud,4,0,0,NA,potamogeton,NA,NA,NA,Photo #8 Amphipods & isopods present
+9/27/2013,E,71,E71,541635,4187292,NA,NA,NA,NA,NA,NA,NA,muck (organic),NA,0,0,0,NA,NA,NA,NA,NA,Caught w/dipnet after seining. Do not include.
+10/24/2013,E,25,E25,541597,4187267,3.00,7.00,0.20,0.10,0.15,21.0,3.2,muck (organic),NA,0,0,0,NA,NA,NA,NA,NA,No inverts. IMG_0383.jpg
+10/24/2013,E,97,E97,541657,4187304,3.00,7.00,0.20,0.00,0.10,21.0,2.1,muck (organic),NA,0,0,0,NA,NA,NA,NA,NA,No amphipods or isopods. Bloodworm. No cover or shadow. Shoreline retreat due to dry conditions away from sedges. Photo ING_0378.jpg showing general shoreline conditions. #IMG-0379 & 0380 muck (organic) & bloodworms. _0381 to _0382
+10/24/2013,E,248,E248,541722,4187199,3.00,5.00,0.15,0.10,0.13,15.0,2.0,muck (organic),NA,0,0,0,NA,NA,NA,NA,NA,"Bloodworms in muck (organic). Sieved muck (organic). Chainline dug into muck (organic). Consider bringing 2nd seine w/o chainline for future sampling in ""muck (organic)y"" habitats. Anoxic smell."
+10/1/2014,NW,314,NW314,540915,4187189,3.00,3.75,0.55,0.20,0.38,11.3,4.2,sand,muck (organic),0,3,1,NA,NA,NA,NA,NA,"Photos: 116-1699, 116-1700, chain rode up onto vegetation"
+10/1/2014,NW,323,NW323,540905,4187189,3.00,3.10,0.50,0.25,0.38,9.3,3.5,sand,muck (organic),0,1,1,NA,NA,NA,NA,NA,"Photos: 116-1697, 116-1698, filamentous green algae"
+10/1/2014,NW,334,W334,540896,4187193,3.00,3.00,0.50,0.30,0.40,9.0,3.6,muck (organic),sand,0,1,1,NA,NA,NA,NA,NA,"Photos: 116-1695, 116-1696, bloodworms present, sieved net"
+10/1/2014,W,29,W029,540834,4187205,3.00,4.60,0.90,0.30,0.60,13.8,8.3,sand,muck (organic),1,2,1,NA,NA,NA,NA,NA,"Photos: 116-1691, 116-1692, sieved net, filamentous green alage"
+10/1/2014,W,78,W078,540792,4187217,3.00,2.50,0.90,0.10,0.50,7.5,3.8,sand,muck (organic),0,1,3,NA,NA,NA,NA,NA,"Photos: 116-1693, 116-1694, sieved net"
+10/1/2014,W,312,W312,540756,4187201,3.00,3.90,0.80,0.00,0.40,11.7,4.7,sand,mud,1,1,1,NA,NA,NA,NA,NA,"Photos: 116-1689. 116-1690, bloodworms present, sieved net"
+10/1/2014,W,589,W589,540947,4187028,3.00,5.30,0.75,0.00,0.38,15.9,6.0,sand,NA,0,0,1,NA,NA,NA,NA,NA,"Photos: 116-1687, 116-1688, bloodworms present"
+10/1/2014,W,710,W710,541017,4186969,3.30,2.80,0.90,0.20,0.55,9.2,5.1,sand,mud,1,1,1,NA,NA,NA,NA,NA,"Photos: 116-1683, 116-1684"
+10/2/2014,E,14,E014,541597,4187260,3.00,3.70,0.50,0.35,0.43,11.1,4.7,muck (organic),sand,0,1,0,2,NA,NA,NA,NA,Net rode up a bit on emergent vegetation! Changed filamentous cover to 0-presumed phytoplankton
+10/2/2014,E,104,E104,541661,4187310,3.00,3.50,0.40,0.25,0.33,10.5,3.4,muck (organic),NA,0,0,0,2,NA,NA,NA,Microcystis,"Photos: 116-1701, mosquitoes! "
+10/2/2014,E,120,E120,541676,4187296,3.00,2.40,0.55,0.45,0.50,7.2,3.6,muck (organic),NA,0,0,0,2,NA,NA,NA,floating clump,"Three long dead Sticklebacks, anoxic muck (organic), no live inverts"
+10/2/2014,E,268,E268,541706,4187178,3.00,3.00,0.80,0.35,0.58,9.0,5.2,sand,NA,0,0,0,2,NA,NA,NA,Microcystis,
+10/2/2014,E,312,E312,541664,4187163,3.00,4.25,0.75,0.20,0.48,12.8,6.1,muck (organic),sand,1,0,0,2,NA,NA,NA,Microcystis,"Photos: 116-1704, 116-1705, sieved net, very muck (organic)y, Brenton collected TW Gobies for his genetics work (~40)"
+10/2/2014,NW,96,NW96,541104,4187200,3.00,4.00,0.50,0.30,0.40,12.0,4.8,sand,muck (organic),0,1,0,1,NA,NA,NA,Microcystis,"Photos: 116-1708, 116-1709"
+10/2/2014,NW,197,NW197,541014,4187203,3.00,3.00,0.85,0.35,0.60,9.0,5.4,sand,muck (organic),0,1,0,NA,NA,NA,NA,NA,"Photos: 116-1706, 116-1707, sieved net"
+9/23/2015,NW,162,NW162,540982,4187169,3.30,5.00,0.45,0.21,0.33,16.5,5.4,muck (organic),NA,4,0,1,NA,NA,NA,NA,NA,"Algae - decomposing - foam color in photo 1184; saved dead TW, died from dip net injury. "
+9/23/2015,NW,182,NW182,540982,4187169,3.30,3.90,0.58,0.19,0.39,12.9,5.0,gravel,muck (organic),4,0,0,NA,NA,NA,NA,NA,Habitat Photo: 1176; dead TW has external tumor and was bleeding from fin 
+9/23/2015,NW,303,NW303,540982,4187169,3.30,4.20,0.43,0.29,0.36,13.9,5.0,sand ,mud,4,0,0,NA,potamogeton,NA,NA,NA,"SAV: Potamogeton; Nearshore too shallow and vegetated to seine; seining started 5.58m from shore in tick vegetation, net rolled"
+9/23/2015,W,24,W24,540931,4187146,3.30,5.45,0.26,0.00,0.13,18.0,2.3,mud,NA,4,0,0,NA,potamogeton,NA,NA,NA,SAV: Potamogeton; Net rolled; Very shallow 
+9/23/2015,W,191,W191,540931,4187146,3.30,4.20,0.60,0.00,0.30,13.9,4.2,sand,corophium,0,0,0,NA,potamogeton,NA,NA,NA,SAV: Potamogeton; lots of isopods and amphibians; Lagoon GH: 2.655 +/- 0.005 @ 11:52; Habitat Photo: 1173 (Fuji FinePix digital camera)
+9/23/2015,W,403,W403,540993,4187036,3.30,4.00,0.87,0.00,0.44,13.2,5.7,sand,mud,0,0,0,NA,NA,NA,NA,NA,Steep shoreline; sieved seine of mud before landing; Habitat Photo: 1172 (Fuji FinePix digital camera) 
+9/23/2015,W,431,W431,540993,4187036,3.30,5.90,0.43,0.00,0.22,19.5,4.2,sand,NA,3,0,0,NA,potamogeton,NA,NA,NA,SAV: Potamogeton; Habitat Photo: 1171 (Fuji FinePix digital camera)
+9/23/2015,W,483,W483,540993,4187036,3.30,6.45,0.58,0.00,0.29,21.3,6.2,sand,mud,4,0,0,NA,potamogeton,NA,NA,NA,SAV: Potamogeton; Habitat Photo: 1170 (Fuji FinePix digital camera) 
+9/24/2015,E,29,E29,541684,4187211,3.30,4.10,0.47,0.00,0.24,13.5,3.2,muck (organic),NA,1,0,0,NA,NA,NA,NA,NA,Habitat Photo: 1187
+9/24/2015,E,241,E241,541697,4187204,3.30,4.60,0.30,0.10,0.20,15.2,3.0,muck (organic),corophium,1,0,0,NA,NA,NA,NA,NA,"Habitat Photo"" 1198"
+9/24/2015,E,280,E280,541697,4187189,3.30,3.60,0.40,0.20,0.30,11.9,3.6,muck (organic),sand,2,0,0,NA,NA,NA,NA,NA,Habitat Photo: 1195-1196; TW with scoliosis was photographed (1196) 
+9/24/2015,E,313,E313,541697,4187204,3.30,4.60,0.52,0.30,0.41,15.2,6.2,mud,sand,4,0,0,NA,NA,NA,NA,NA,"Habitat Photo: 1192-1194; Net rolled, lots of vegetation "
+9/24/2015,E,355,E355,541742,4187195,3.30,4.50,0.50,0.20,0.35,14.9,5.2,muck (organic),sand,4,0,0,NA,NA,NA,NA,NA,"Habitat Photo: 1188-1191; Net rolled, lets of vegetation (3D)"
+9/24/2015,NW,125,NW125,540982,4187169,3.30,4.80,0.58,0.00,0.29,15.8,4.6,muck (organic),NA,4,0,0,NA,NA,NA,NA,NA,Habitat Photo: 1186; Net rolled
+9/24/2015,NW,141,NW141,540982,4187169,3.30,4.80,0.53,0.00,0.27,15.8,4.2,mud,sand,3,0,0,NA,NA,NA,NA,NA,Habitat Photo: 1185; Net rolled; @9:20 GH=2.645 +/- 0.005
+10/17/2016,NW,43,NW43,541148,4187227,3.30,2.60,0.82,0.20,0.51,8.6,4.4,gravel,muck (organic),0,1,0,NA,NA,sedges,NA,NA,
+10/17/2016,NW,75,NW75,541119,4187219,3.30,4.00,0.55,0.37,0.45,13.2,5.9,mud,sand,0,2,0,NA,NA,sedges,NA,NA,
+10/17/2016,NW,136,NW136,541077,4187177,3.30,3.30,0.71,0.10,0.41,10.9,4.5,gravel,sand,0,1,0,NA,NA,sedges,NA,NA,
+10/17/2016,NW,222,NW222,541005,4187195,3.30,3.10,0.55,0.25,0.40,10.2,4.1,gravel,muck (organic),0,1,0,NA,NA,NA,NA,NA,No notes
+10/17/2016,NW,358,NW358,540888,4187189,3.30,3.10,0.49,0.28,0.39,10.2,4.0,muck (organic),NA,0,1,0,NA,NA,NA,NA,NA,Tons of muck (organic); Lots of bloodworms; Low efficiency
+10/17/2016,W,96,W96,540775,4187220,3.30,2.70,0.45,0.27,0.36,8.9,3.2,muck (organic),NA,0,1,0,NA,NA,cattails,NA,NA,
+10/17/2016,W,271,W271,540778,4187198,3.30,3.40,0.81,0.16,0.49,11.2,5.4,muck (organic),sand,0,2,0,NA,NA,sedges,NA,NA,
+10/17/2016,W,301,W301,540799,4187189,3.30,3.70,0.75,0.10,0.43,12.2,5.2,sand,NA,0,1,0,NA,NA,sedges,NA,NA,Lots of amphipods
+10/17/2016,W,423,W423,540867,4187098,3.30,2.75,0.62,0.20,0.41,9.1,3.7,muck (organic),sand,0,2,0,NA,NA,sedges,NA,NA,Lots of amphipods; Seived net
+10/17/2016,W,646,W646,541003,4186972,3.30,2.50,1.10,0.34,1.73,8.3,14.2,muck (organic),gravel,0,1,0,NA,NA,sedges,NA,NA, Lots of amphipods
+10/18/2016,E,26,E26,541608,4187278,3.30,3.90,0.80,0.30,0.55,12.9,7.1,sand,NA,0,1,0,NA,potamogeton,NA,NA,bluegreen,Otter scat
+10/18/2016,E,130,E130,541690,4187277,3.20,5.00,0.49,0.31,0.40,16.0,6.4,sand,corophium,0,1,0,NA,NA,sedges,NA,bluegreen,Lots of amphipods; Air calibration; Rain last 24 hours
+10/18/2016,E,231,E231,541715,4187187,3.30,4.50,1.00,0.25,0.65,14.9,9.7,sand,corophium,0,1,0,NA,NA,NA,NA,bluegreen,"Lots of amphipods, photo (no photo number listed)"
+10/18/2016,E,353,E353,541623,4187170,3.30,3.20,0.70,0.00,0.35,10.6,3.7,sand,NA,0,1,0,NA,NA,saltgrass,NA,NA,Dead pipe fish; Bull kelp; Lagoon getting way over washed
+10/18/2016,E,358,E358,541620,4187170,3.30,2.90,0.75,0.15,0.45,9.6,4.3,sand,mud,0,1,0,NA,NA,NA,NA,NA,"Wash over, lots of foam"
+10/2/2017,NW,87,NW87,541104,4187200,3.30,2.70,0.55,0.25,0.40,8.9,3.6,muck (organic),sand,3,1,1,NA,NA,NA,NA,NA,Blood worms present.
+10/2/2017,NW,219,NW219,541014,4187203,3.30,3.10,0.55,0.00,0.28,10.2,2.8,gravel,NA,3,0,1,NA,NA,NA,NA,NA,Canon D20 #8445; Minimum depth not recorded; Weather: sunny
+10/2/2017,NW,241,NW241,540915,4187189,3.30,3.25,0.65,0.20,0.43,10.7,4.6,mud,gravel,3,1,2,NA,NA,NA,NA,NA,Canon D20 #8444
+10/2/2017,NW,303,NW303,540896,4187193,3.30,4.20,0.50,0.35,0.43,13.9,5.9,sand,mud,2,1,4,NA,NA,NA,NA,NA,
+10/2/2017,NW,325,NW325,540905,4187189,3.30,3.60,0.65,0.30,0.48,11.9,5.6,sand,mud,3,NA,NA,NA,NA,NA,NA,NA,"*Fix map; LOTS of garbage in water; Gabi with iphone pic; Belostomatidae, odonate larvae"
+10/2/2017,W,92,W92,540792,4187217,3.30,3.50,0.95,0.15,0.55,11.6,6.4,sand,muck (organic),4,0,1,NA,potamogeton,NA,NA,NA,"Canon D20 #8441: habitat, #8442: filamentous green algae, mostly coating SAV; lots of water boatmen and backswimmers."
+10/2/2017,W,149,W149,541017,4186969,3.30,4.40,0.20,0.00,0.10,14.5,1.5,sand,mud,0,1,4,NA,NA,sedges,NA,NA,Big wad of green algae. Most of gobies caught in this. 
+10/2/2017,W,284,W284,540947,4187028,3.30,3.80,0.90,0.35,0.63,12.5,7.8,sand,NA,0,1,0,NA,NA,sedges,NA,NA,Gabi took iphone photos of sampling and habitat. Weather: sunny
+10/2/2017,W,319,W319,540834,4187205,3.30,4.20,1.00,0.40,0.70,13.9,9.7,sand,muck (organic),0,1,0,NA,NA,sedges,NA,NA,Weather: sunny
+10/2/2017,W,375,W375,540756,4187201,3.30,3.50,0.90,0.35,0.63,11.6,7.2,sand,NA,1,1,0,NA,potamogeton,sedges,NA,NA,Water turbid.  Weather: sunny; 1 goby smushed in bucket. 
+10/3/2017,E,58,E58,541597,4187260,3.30,3.00,0.55,0.35,0.45,9.9,4.5,muck (organic),NA,3,1,0,NA,NA,cattails,NA,NA,blood worms present; Canon D20; Weather: sunny
+10/3/2017,E,90,E90,541661,4187310,3.30,3.70,0.40,0.25,0.33,12.2,4.0,muck (organic),NA,3,1,NA,NA,potamogeton,sedges,NA,NA,net rolled at bottom; 2 adult red-legged frogs along shoreline between Sta E 90 & E 58; Weather: sunny
+10/3/2017,E,139,E139,541676,4187296,3.30,2.70,NA,NA,NA,8.9,NA,gravel,muck (organic),3,1,0,NA,potamogeton,sedges,NA,NA, 2 river otters. No depths recorded. Weather: sunny
+10/3/2017,E,200,E200,541706,4187178,3.30,3.75,0.50,0.15,0.33,12.4,4.0,gravel,muck (organic),2,1,NA,NA,potamogeton,sedges,NA,NA,"Lots of inverts-backswimmer, dragonfly nymph;  Weather: sunny"
+10/3/2017,E,264,E264,541664,4187163,3.30,3.00,0.65,0.35,0.50,9.9,5.0,muck (organic),gravel,4,1,1,NA,potamogeton,sedges,NA,NA,Canon D20 #8448-8449; amphipods abundant;  Weather: sunny
+9/23/2018,W,278,W278,540842,4187124,3.3,7.57,NA,NA,NA,25.0,NA,muck (organic),NA,NA,NA,NA,NA,NA,NA,NA,NA,Small TWG: not totally translucent; small arrow gobies; more translucent; did horseshoe sampling w/ full length of seine (width of small tarp)
+9/23/2018,W,461,W461,540960,4187004,3.30,4.32,0.38,0.03,0.21,14.3,2.9,sand,corophium,0,1,1,NA,NA,sedges,Enteromorpha,NA,Photo #9120 Canon D20; Minnow trap 15:00 - 16:30; 4 AD TW; Some dead amphipods on bottom near trap;
+9/23/2018,W,514,W514,540983,4186961,3.3,5.1,0.35,0.15,0.25,16.8,4.2,sand,muck (organic),0,1,0,NA,NA,sedges,NA,NA,Photo #9121 Canon D20Amphipods abundant; 2 long dead TW; dominant EAV = sedge
+9/27/2018,E,107,E107,541661,4187305,3.3,6.3,0.40,0.00,0.20,20.8,4.2,muck (organic),NA,0,0,0,NA,NA,NA,NA,NA,Photo #9142. Got stuck in mud. Hard to seine mud.
+9/27/2018,E,115,E115,541670,4187304,3.3,5.95,0.35,0.00,0.18,19.6,3.4,muck (organic),NA,0,0,0,NA,NA,NA,NA,NA,Some dead fish. No live inverts.
+9/27/2018,E,217,E217,541714,4187227,3.3,4.7,0.60,0.00,0.30,15.5,4.7,muck (organic),gravel,2,1,0,NA,potamogeton,NA,NA,NA,Gravid females. Decomposed dead fish.
+9/27/2018,E,222,E222,541717,4187223,3.3,4.5,0.25,0.05,0.15,14.9,2.2,muck (organic),NA,0,1,3,NA,NA,sedges,NA,NA,Photos #9140-9141. No inverts in muck (organic). Very decomposing.  algae decaying
+9/27/2018,E,350,E350,541638,4187166,3.3,4.7,0.50,0.03,0.27,15.5,4.1,muck (organic),sand,1,1,0,NA,NA,NA,NA,NA,"Photo #9130-9139 (close-ups of dead gobies w/ red lower jaws). Partial fish kill, recent, a few fish not totally decomposed (pics). Dead amphipods. Some fish gulping air. Belt transect, 5 STK and 21 TW dead (10 x 1 m transect)"
+9/27/2018,W,35,W35,540829,4187200,3.3,3.95,0.50,0.05,0.28,13.0,3.6,sand,muck (organic),0,1,0,NA,NA,sedges,NA,NA,Lots of dead amphipods; a couple dead fish. 10 x 1 m belt transect east of station: 20 dead TW and 3 dead SB.
+9/27/2018,W,294,W294,540847,4187116,3.3,4.3,0.80,0.15,0.48,14.2,6.7,muck (organic),sand,0,1,0,NA,NA,NA,NA,NA,Lots of bloodworms; dead amphipod. Lots of females. 10 x 1 m transect: 5 dead TW and 1 dead SB
+9/28/2018,NW,42,NW42,541143,4187226,3.3,4.5,0.33,0.05,0.19,14.9,2.8,mud,muck (organic),0,1,0,NA,NA,NA,NA,NA,Canon D20 Photo 9143. muck (organic) seine + sieve. Bloodworms only invert. Likely chronic DO problem
+9/28/2018,NW,88,NW88,541110,4187202,3.3,4.5,0.33,0.14,0.24,14.9,3.5,mud,sand,0,1,0,NA,NA,NA,NA,NA,"Several dead amphipods, not as many as other sites; 10 x 1m belt transect: 3 dead TW, 0 dead SB; a bit east side of same seine site"
+9/28/2018,NW,182,NW182,541033,4187198,3.3,3.9,0.60,0.20,0.40,12.9,5.1,mud,gravel,0,1,0,NA,NA,NA,NA,NA,"10 x 1 meter transect just west of sein site: 7 dead TW, 4 dead SB"
+9/28/2018,NW,227,NW227,540996,4187191,3.3,4.3,0.62,0.06,0.34,14.2,4.8,gravel,mud,1,0,0,NA,NA,NA,NA,NA,Lots of dead amphipods (photos #9144 - 9150); Hab photo #9151
+9/28/2018,NW,237,NW237,540986,4187190,3.3,3.7,0.48,0.05,0.27,12.2,3.2,gravel,mud,1,1,0,NA,NA,NA,NA,NA,Lagoon GH = 3.04 +/- 0.02 @ 12:10 PDT; wind waves; 10 x 1 m belt transect abutting & west side of seine site: 11 dead TW & 2 dead SB
+9/18/2019,W,146,W146,540787,4187211,3.3,2.7,0.95,0.25,0.60,8.9,5.3,sand,NA,3,0,2,NA,NA,NA,Spirogyra?,NA,"GH at lagoon: 4.45 +/- 0.02. Staff gage dirty, small wind wave. No New Zealand mudsnail in net. "
+9/18/2019,W,265,W265,540678,4187243,3.3,3.8,0.15,0.00,0.08,12.5,0.9,sand,mud,0,0,3,NA,NA,NA,Spirogyra?,NA, Tons of algae. Had to skim off before landing. Looked at samples under dissecting scope (35x). Need slightly higher magnification. Spyrogyra- chloroplast spiraled. No New Zealand mudsnail in net. Img_4971.jpg. Img_4970.jpg.
+9/18/2019,W,379,W379,540752,4187203,3.3,3.9,0.40,0.00,0.20,12.9,2.6,sand,NA,0,0,4,NA,NA,NA,Spirogyra?,NA,Morts probably associated with weight of algae in net. No NZMS in net. Img_4967.
+9/18/2019,W,714,W714,540959,4186996,3.3,3.9,0.35,0.30,0.33,12.9,4.2,sand,NA,1,1,0,NA,NA,NA,NA,NA,"Isopods, corophium, and amphopods. No NZMS in net. "
+9/18/2019,W,761,W761,540983,4186961,3.3,3.4,0.60,0.20,0.40,11.2,4.5,sand,NA,3,1,0,NA,potamogeton,sedges,Spirogyra?,NA,Isopods and amphopods present. No NZMS in net. 
+9/23/2019,E,11,E011,541591,4187259,3.3,2.2,0.80,0.65,0.73,7.3,5.3,muck (organic),NA,4,1,1,NA,NA,NA,Spirogyra?,NA, Net rolled on bottom due to veg. No New Zealand mudsnail in net.
+9/23/2019,E,72,E072,541624,4187301,3.3,2.4,0.45,0.30,0.38,7.9,3.0,muck (organic),NA,4,1,1,NA,NA,NA,NA,NA,Net rolled along the bottom.
+9/23/2019,NW,31,NW031,541143,4187226,3.3,2.4,0.70,0.45,0.58,7.9,4.6,gravel,mud,4,0,0,NA,NA,NA,NA,NA,"Lots of inverts- damselfly, isopod. "
+9/23/2019,NW,129,NW129,541061,4187186,3.3,2.2,0.70,0.40,0.55,7.3,4.0,sand,mud,4,1,1,NA,NA,sedges,Spirogyra?,NA,
+9/23/2019,NW,137,NW137,541055,4187190,3.3,2,0.70,0.40,0.55,6.6,3.6,sand,mud,2,1,2,NA,NA,sedges,Spirogyra?,NA,
+9/23/2019,NW,221,NW221,540977,4187193,3.3,2,0.55,0.25,0.40,6.6,2.6,gravel,mud,2,1,4,NA,potamogeton,sedges,Spirogyra?,NA, Santa Cruz water snake. Img_5139.jpg.
+9/23/2019,NW,258,NW258,540943,4187187,3.3,2,0.75,0.50,0.63,6.6,4.1,mud,gravel,4,0,1,NA,potamogeton,NA,Spirogyra?,NA,Adjacent to willow overhanging water.
+9/26/2019,E,19,E319,541658,4187159,3.3,2.6,0.65,0.35,0.50,8.6,4.3,muck (organic),sand,4,1,1,NA,NA,sedges,Spirogyra?,NA,
+9/26/2019,E,283,E283,541695,4187176,3.3,2.6,0.75,0.50,0.63,8.6,5.4,muck (organic),mud,4,1,1,NA,NA,NA,NA,NA,Bloodworm 
+9/26/2019,E,288,E288,541689,4187172,3.3,2.7,0.75,0.45,0.60,8.9,5.3,mud,sand,4,1,1,NA,NA,NA,Spirogyra?,NA,
+9/29/2020,W,95,W095,540787,4187211,3,4,0.65,0.10,0.38,12.0,4.5,sand,mud,1,1,2,0,potamogeton,sedges,likely Ulva/Enteromorpha,NA,Photo #0056-57
+9/29/2020,W,272,W272,540678,4187243,3,4.3,0.55,0.35,0.45,12.9,5.8,muck (organic),sand,1,NA,0,0,NA,NA,NA,NA,Photo #0051-55
+9/29/2020,W,305,W305,540752,4187203,3,3.45,0.85,0.40,0.63,10.4,6.5,muck (organic),sand,0,1,0,0,NA,sedges,NA,NA,
+9/29/2020,W,374,W374,540959,4186996,3,3.75,0.95,0.30,0.63,11.3,7.0,sand,muck (organic),0,1,0,0,NA,sedges,NA,NA," Amphipod, copepod"
+9/29/2020,W,431,W431,540983,4186961,3,2.5,0.90,0.25,0.58,7.5,4.3,sand,muck (organic),0,1,1,0,NA,sedges,likely Ulva/Enteromorpha,NA,"Camera; Olympus TG-6.  Habitat photo#0050.  Bloodworms, amphipods, copepods present in seine"
+9/30/2020,E,35,E035,541591,4187259,3,3.1,0.60,0.45,0.53,9.3,4.9,muck (organic),NA,1,1,0,1,NA,cattails,NA,NA,No bloodworms or amphipods.  Photo #0067-68
+9/30/2020,E,204,E204,541624,4187301,3,3.3,0.45,0.15,0.30,9.9,3.0,gravel,muck (organic),1,1,0,2,potamogeton,sedges,NA,NA,"Bloodworms, amphipods present.  Photo Id#0069-71"
+9/30/2020,E,287,E287,541695,4187176,3,3.8,0.65,0.30,0.48,11.4,5.4,muck (organic),NA,0,1,0,1,NA,sedges,NA,NA,Photo Id#0072-73
+9/30/2020,E,306,E306,541689,4187172,3,3.8,0.60,0.35,0.48,11.4,5.4,muck (organic),gravel,1,1,0,1,potamogeton,sedges,NA,NA,Abundant Bloodworms.  Photo Id#0074
+9/30/2020,E,324,E324,541658,4187159,3,4.1,0.65,0.40,0.53,12.3,6.5,muck (organic),NA,1,1,0,1,potamogeton,sedges,NA,NA,Otter latrine/run adjacent to site.  Adult red-legged frog seen @ SE corner of lagoon on flattened reeds.  Photo Id#0075-80
+9/30/2020,NW,14,NW014,541143,4187226,3,3.25,0.65,0.35,0.50,9.8,4.9,muck (organic),gravel,0,1,1,0,NA,sedges,likely Ulva/Enteromorpha,NA,Bloodworms. 
+9/30/2020,NW,111,NW111,541061,4187186,3,4.1,0.70,0.35,0.53,12.3,6.5,muck (organic),gravel,1,1,0,1,potamogeton,sedges,NA,NA, Abundant Bloodworms.  Photo Id#0082
+9/30/2020,NW,167,NW167,541055,4187190,3,2.7,0.60,0.35,0.48,8.1,3.8,muck (organic),gravel,1,1,0,0,NA,NA,NA,NA,Photo #0062-66
+9/30/2020,NW,268,NW268,540977,4187193,3,3.2,0.60,0.35,0.48,9.6,4.6,muck (organic),cobble,1,1,1,0,NA,NA,NA,NA,Photo #0060-61  Algae cover in datasheet lacking taxa-- presumed filamentous
+9/30/2020,NW,300,NW300,540943,4187187,3,3.5,0.50,0.25,0.38,10.5,3.9,sand,muck (organic),0,1,2,0,NA,sedges,likely Ulva/Enteromorpha,NA, Photo #0058-59
+10/26/2021,W,15,W15,540860,4187195,5.6,1.9,1.15,0.30,0.73,10.6,7.7,sand,NA,0,2,0,0,NA,Sedge,NA,NA,Flooded terristrial habitat
+10/26/2021,W,48,W48,540830,4187200,4.5,1.9,1.35,0.45,0.90,8.6,7.7,sand ,NA,0,2,0,0,NA,Juncas,NA,NA,Wave overwash logs. Flooded terrestrial vegatation.
+10/26/2021,W,76,W76,540801,4187207,4.6,6.2,1.05,0.45,0.75,28.5,21.4,sand,NA,0,2,0,0,NA,Sedge,NA,NA,
+10/26/2021,W,650,W650,540948,4187028,3.3,7.6,0.80,0.25,0.53,25.1,13.2,sand ,NA,0,2,0,0,NA,Saltgrass,NA,NA,Flooded saltgrass area. Pulled up before terrestial area 
+10/26/2021,W,755,W755,540997,4186958,3.3,5.3,1.10,0.50,0.80,17.5,14.0,sand ,NA,0,2,0,0,NA,Juncus,NA,NA,Flooded iceplant: emerged vegatation (mostly Juncus+some saltgrass): pulled seine up 
+10/26/2021,NW,82,NW82,541103,4187197,3.5,2.4,1.20,0.70,0.95,8.4,8.0,sand,NA,0,3,0,0,NA,"cattails, thistle ",NA,NA,Flooded terrestrial vegatation
+10/26/2021,NW,244,NW244,540976,4187198,4,3.8,1.05,0.45,0.75,15.2,11.4,sand,NA,1,2,0,0,stuckenia,sedge,NA,NA,
+10/26/2021,NW,330,NW330,540901,4187196,2.6,1.9,1.25,0.90,1.08,4.9,5.3,sand,NA,0,3,0,0,NA,Sedge,NA,NA,Terrestrial vegatation; lots of driftwood hard to survey 
+10/26/2021,NW,353,NW353,540884,4187200,4.6,1.5,1.25,0.65,0.95,6.9,6.6,sand,NA,0,2,0,0,NA,Sedge,NA,NA,
+10/27/2021,E ,57,E57,541617,4187287,3.6,2.6,1.30,0.40,0.85,9.4,8.0,riprap,NA,1,1,0,0,stuckenia,"cattails, fennel ",NA,NA,
+10/27/2021,E,93,E93,541643,4187303,2.2,3.3,1.30,0.55,0.93,7.3,6.7,riprap,NA,1,1,0,0,stuckenia,terrestrial plants ,NA,NA,Flooded ruderal area by rip rap 
+10/27/2021,E,159,E159,541694,4187263,1.62,3.65,1.32,1.00,1.16,5.9,6.9,riprap,NA,3,1,0,0,stuckenia,sedge ,NA,NA,Too deep >1.4m. Sampled 50m to south along shoreline
+10/27/2021,E,350,E350,541624,4187165,3.7,2,1.00,0.75,0.88,7.4,6.5,sand,NA,0,2,0,0,NA,"sedge, terrestrial daisy",NA,NA,Sampled station E350 once but veg too dense and net rolled. So sampled 10m E. of 350. Sample site is flooded terrestrial vegetated habitat. Lots of dead terrestrial snails in siene haul. 
+9/28/2022,NW,86,NW86,541105.9143,4187198.374,3.4,3.5,0.45,0.20,0.33,11.9,3.9,muck (organic),sand,1,1,0,4,stuckenia,sedge,NA,NA,
+9/28/2022,NW,114,NW114,541085.5743,4187185.972,3.3,5.5,0.69,0.23,0.46,18.2,8.3,muck (organic),sand,1,1,0,4,NA,NA,NA,NA,caught WPT in the net
+9/28/2022,NW,275,NW275,540947.1639,4187192.917,3.4,3.83,0.60,0.20,0.40,13.0,5.2,muck (organic),sand,1,1,0,4,stuckenia,sedge,NA,NA,Small chunks of wood at the bottom 
+9/28/2022,NW,297,NW297,540933.2733,4187180.515,3.3,3.9,0.35,0.10,0.23,12.9,2.9,muck (organic),sand,1,1,0,4,stuckenia,sedge,NA,NA,Chunk of wood at the bottom 
+9/28/2022,NW,371,W371,540869.8468,4187198.446,3.3,4.1,0.40,0.15,0.28,13.5,3.7,muck (organic),sand,0,1,0,4,NA,sedge,NA,NA,Net rolled a little at the bottom 
+9/28/2022,W,240,W240,540835.0465,4187137.355,3.3,3.1,0.55,0.20,0.38,10.2,3.8,muck (organic),sand,1,2,0,4,stuckenia,sedge,NA,NA,
+9/28/2022,W,356,W356,540906.4842,4187057.98,3.3,2.9,0.80,0.25,0.53,9.6,5.0,muck (organic),sand,1,1,0,4,stuckenia,sedge,NA,NA,
+9/28/2022,W,364,W364,540912.4373,4187052.026,3.3,2.7,0.65,NA,0.65,8.9,5.8,sand,muck (organic),1,1,0,4,stuckenia,sedge,NA,NA,Algae phytoplankton
+9/28/2022,W,415,W415,540955.1014,4187031.19,3.3,3.9,0.56,0.00,0.28,12.9,3.6,sand,NA,0,0,0,4,NA,NA,NA,NA,
+9/28/2022,W,429,W429,540957.0858,4187014.819,3.2,5.2,0.52,0.20,0.36,16.6,6.0,muck (organic),sand,1,1,0,4,stuckenia,sedge,NA,NA,most TW females look like they are post-partum
+9/29/2022,E,171,E171,541699.6444,4187265.812,3.3,3,0.33,0.06,0.20,9.9,1.9,gravel,muck (organic),1,1,0,4,stuckenia,sedge,NA,NA,
+9/29/2022,E,198,E198,541701.9304,4187244.094,3.7,3.7,0.42,0.10,0.26,13.7,3.6,muck (organic),gravel,2,1,0,4,stuckenia,sedge,NA,NA,
+9/29/2022,E,235,E235,541716.7895,4187211.328,3.3,4.25,0.35,0.10,0.23,14.0,3.2,muck (organic),gravel,2,0,0,4,stuckenia,NA,NA,NA,bright green unicellular phytoplankton
+9/29/2022,E,246,E246,541718.3134,4187197.993,3.3,3.5,0.45,0.38,0.42,11.6,4.8,muck (organic),NA,0,2,0,4,NA,scirpus microcarpus,NA,NA,Lots of muck (organic) in net-may have missed some fish 
+9/29/2022,E,286,E286,541686.3094,4187178.943,3.3,3.85,0.45,0.20,0.33,12.7,4.1,muck (organic),NA,0,1,0,4,NA,sedge,NA,NA,Lots of muck (organic) in net-may have missed some fish 
