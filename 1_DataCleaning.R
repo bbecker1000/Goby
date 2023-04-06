@@ -174,11 +174,14 @@ plot(goby_master$volume, as.numeric(goby_master$Volumer))
 goby_master$Match <- goby_master$Date.x == goby_master$Date.y
 # 5 dates don't match and are 1-2 days different, must have been data collected on two days due to logistics.
 
+goby_master <- goby_master %>%
+  rename("Zone" = "Zone 2")
+
+goby_master$Zone <- as.factor(goby_master$Zone)
 
 #####OK goby_master ready for analysis -----------------------------------------
 
-## make a dag
-library(dagitty)
+
 
 
 
