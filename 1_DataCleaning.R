@@ -179,6 +179,29 @@ goby_master <- goby_master %>%
 
 goby_master$Zone <- as.factor(goby_master$Zone)
 
+
+#1 case where volume = 0 was in shallow mud.  assign a really small area
+hist(goby_master$volume)
+goby_master$volume <- ifelse(goby_master$volume == 0, 0.2, goby_master$volume)
+
+#look at zones to combine.  refer to previous report.
+plot(goby_master$Zone)
+
+# remove the Winter data?
+table(goby_master$Season)
+
+str(goby_master)
+goby_master$Water_temp_1 <- as.numeric(goby_master$Water_temp_1)
+hist(goby_master$Water_temp_1)
+
+## TO DO
+# pool zones?
+# include precip data
+# breach data?
+
+
+
+
 #####OK goby_master ready for analysis -----------------------------------------
 
 
