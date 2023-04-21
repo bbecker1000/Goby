@@ -159,7 +159,7 @@ microsporidium
 #fish_mortality <- all NAs, so check original data
 #fish_injury    <- all NAs, so check original data
 
-goby_master <- list(water_qual_event, water_qual_wide, fish_dat_sum, fish_stats, microsporidium) %>% 
+goby_master <- list(water_qual_event, water_qual_wide, fish_dat_sum, fish_stats, microsporidium) %>%   #will add fish_mort
   reduce(left_join, by = "Unique_ID2")
 str(goby_master)
 View(goby_master)
