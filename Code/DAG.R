@@ -22,8 +22,8 @@ library(dagitty)
 # SAV Cover?
 # EAV Species?
 # EAV Cover?
-# Zone
-# Breach <- Need to code
+# Zone ???  WQ and substrate act as controls, esp. low DO
+# Breach <- Need to code  #DF suggests using date since last Breach...can provide dates
 # Wind/Weather <- Need to get
 
 ## Random Effects
@@ -31,12 +31,14 @@ library(dagitty)
 
 # build the DAG
 
+set.seed(123)
+
 DAG_GOBY <- dagitty("dag{ 
   Year -> GOBY ;
   WQ -> GOBY ;
   Stickleback -> GOBY ;
   Sculpin -> GOBY ;
-  Microsporidia -> GOBY ;
+  Rain -> Microsporidia -> GOBY ;
   Substrate -> GOBY ;
   SAV -> GOBY ;
   Breach -> WQ -> GOBY ;
@@ -47,6 +49,8 @@ DAG_GOBY <- dagitty("dag{
   WQ -> Stickleback -> GOBY ;
   WQ -> SAV -> Stickleback ;
   WQ -> SAV -> Sculpin ;
+  Substrate -> Sculpin -> GOBY;
+  
   
   Year [exposure] ;
   WQ [exposure] ;

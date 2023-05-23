@@ -8,7 +8,7 @@ library(lubridate)
 ## Import three data tables
 water_qual_event <- read_csv("Data/water_qual_event.csv", 
                              col_types = cols(Date = col_date(format = "%m/%d/%Y")))
-
+View(water_qual_event)
 fish_dat <- read_csv("Data/fish_dat.csv", 
                      col_types = cols(Year = col_double())) # import notes problems on rows 12485 and 13444, but I don't see anything wrong.
 #note that mort and Injury are all NA
@@ -26,7 +26,7 @@ hist(fish_dat$Length) #outlier length on a stickleback (370mm!)  Check with Darr
 water_qual_event$Year <- year(water_qual_event$Date)
 water_qual_event$Month <- month(water_qual_event$Date)
 hist(water_qual_event$Month)
-water_qual_event$Season <- ifelse(water_qual_event$Month < 6, "Winter", "Fall")
+water_qual_event$Season <- ifelse(water_qual_event$Month < 6, "Winter", "Fall")  # Darren OK'd
 water_qual_event$Unique_ID2 <- paste0(water_qual_event$Year,"_", 
                                       water_qual_event$Season, "_", 
                                       water_qual_event$Station_ID)
@@ -73,6 +73,16 @@ water_qual_wide <- water_qual_temp %>%
               names_from = "Group_ID",
               values_from = c("Water_temp", "Spec_cond", "Der_spec_cond", "DO", "Perc_sat", "pH")) #airtemp only 1 measurement
 View(water_qual_wide) #has 397 rows, water_qual_event has 406 rows.  so some events missing WQ data?
+
+# change some character to numeric
+water_qual_wide$Water_temp_1 <- as.numeric(water_qual_wide$Water_temp_1)
+water_qual_wide$Water_temp_2 <- as.numeric(water_qual_wide$Water_temp_2)
+water_qual_wide$Spec_cond_1  <- as.numeric(water_qual_wide$Spec_cond_1)
+water_qual_wide$Spec_cond_2  <- as.numeric(water_qual_wide$Spec_cond_2)
+water_qual_wide$DO_1  <- as.numeric(water_qual_wide$DO_1)
+water_qual_wide$DO_2  <- as.numeric(water_qual_wide$DO_2)
+water_qual_wide$Perc_sat_1  <- as.numeric(water_qual_wide$Perc_sat_1)
+water_qual_wide$Perc_sat_2  <- as.numeric(water_qual_wide$Perc_sat_2)
 
 #join WQ_event and WQ
 WQ_event_WQ <- left_join(water_qual_event, water_qual_wide, by = "Unique_ID2")
@@ -170,6 +180,9 @@ goby_master$Volumer <- as.numeric(goby_master$Volumer)
 plot(goby_master$volume, as.numeric(goby_master$Volumer))  
 # question for Darren, why does volume and Volumer usually but not always match?
 
+
+goby_master$Volume_Match <- goby_master$Volumer == goby_master$volume
+
 #date fields match?
 goby_master$Match <- goby_master$Date.x == goby_master$Date.y
 # 5 dates don't match and are 1-2 days different, must have been data collected on two days due to logistics.
@@ -194,10 +207,15 @@ str(goby_master)
 goby_master$Water_temp_1 <- as.numeric(goby_master$Water_temp_1)
 hist(goby_master$Water_temp_1)
 
+
+
 ## TO DO
 # pool zones?
 # include precip data
 # breach data?
+
+
+
 
 
 
