@@ -4,6 +4,7 @@ library(lme4)
 library(sjPlot)
 
 hist(goby_master$Sum_TW)
+
 hist(goby_master$Sum_TW/(goby_master$volume))
 goby_master
 #Need to get in rain and wind data !
