@@ -214,10 +214,11 @@ hist(goby_master$Water_temp_1)
 # include precip data
 # breach data?
 
+# drop winter data
+goby_master[goby_master$Season != "Winter", ]  
 
-
-
-
+# drop zones 
+goby_master[goby_master$Zone != "NE" & goby_master$Zone != "SE" & goby_master$Zone != "SW", ]
 
 
 #####OK goby_master ready for analysis -----------------------------------------
