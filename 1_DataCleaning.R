@@ -214,11 +214,28 @@ hist(goby_master$Water_temp_1)
 # include precip data
 # breach data?
 
+### NEW 5/26 #####
 # drop winter data
-goby_master[goby_master$Season != "Winter", ]  
+goby_master[goby_master$Season != "Winter"]  
+View(goby_master)
 
 # drop zones 
-goby_master[goby_master$Zone != "NE" & goby_master$Zone != "SE" & goby_master$Zone != "SW", ]
+goby_master[goby_master$Zone != "NE" & goby_master$Zone != "SE" & goby_master$Zone != "SW"]
+View(goby_master)
+
+#average water temperature
+goby_master$avg_WT <- rowMeans(goby_master[30,31], na.rm=TRUE)
+
+library(dplyr)
+goby_master %>%
+  mutate(val= (pmax(Water_temp_1, Water_temp_2, na.rm=TRUE)+
+                 pmin(Water_temp_1, Water_temp_2, na.rm=TRUE))/2)
+
+library(data.table)
+setDT(goby_master)
+goby_master[,.(rMean=rowMeans(.SD,na.rm = T)),.SDcols = c('Water_temp_1','Water_temp_2')]
+
+goby_master$avg_wt <- rowMeans(goby_master[ , c(30,31)], na.rm=TRUE)
 
 
 #####OK goby_master ready for analysis -----------------------------------------
