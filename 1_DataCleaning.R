@@ -251,14 +251,12 @@ plot(goby_master$val, goby_master$temp_mean)
 goby_master$min_DO <- do.call(pmin, c(goby_master[,c("DO_1", "DO_2")], na.rm=TRUE))
 View(goby_master)
 
+#join rainfall data by year
+goby_master_1 <- left_join(goby_master, rainfall_data, by = "Year")
 
-
-
-
-
-#minimum DO
-goby_master$min_DO <- do.call(pmin, c(goby_master[,c("DO_1", "DO_2")], na.rm=TRUE))
-View(goby_master)
+#join breach data based on year
+goby_master_2 <- left_join(goby_master_1, breach_data, by = "Year")
+View(goby_master_2)
 
 #####OK goby_master ready for analysis -----------------------------------------
 
