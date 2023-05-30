@@ -237,6 +237,9 @@ goby_master[,.(rMean=rowMeans(.SD,na.rm = T)),.SDcols = c('Water_temp_1','Water_
 
 goby_master$avg_wt <- rowMeans(goby_master[ , c(30,31)], na.rm=TRUE)
 
+#minimum DO
+goby_master$min_DO <- do.call(pmin, c(goby_master[,c("DO_1", "DO_2")], na.rm=TRUE))
+View(goby_master)
 
 #####OK goby_master ready for analysis -----------------------------------------
 
