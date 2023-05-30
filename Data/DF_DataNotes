@@ -24,5 +24,35 @@ ask Darren why volumer is different than simple mean_depth*area.
 pool the areas according to the 2009 report
 
 
+## WQ
+## water quality data some days missed
+## sometime 2 depths would just have.
+## some
+
+
+######
+Average WT 1 and 2
+--> 1 and 2 might be top or bottom.  may be inconsistent
+--> either average or take lowest temp
+
+DO_take lowest
+if 2 values, choose the WQ that associates with the lowest DO.  then take 
+
+example
+temp_1 = 10
+temp_2 = 11
+
+DO_1 = 7
+DO_2 = 10
+
+if have two values, use whatever is associate with the lowest DO.  otherwise use whatever we have.
+
+include Spec_cond and perc_sat, 
+######
+
+
+
+
+
 
 

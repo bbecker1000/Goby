@@ -216,26 +216,45 @@ hist(goby_master$Water_temp_1)
 
 ### NEW 5/26 #####
 # drop winter data
-goby_master[goby_master$Season != "Winter"]  
-View(goby_master)
+# goby_master[goby_master$Season != "Winter"]  
+
+goby_master <-  goby_master %>% filter(Season != "Winter")
+
+#View(goby_master)
 
 # drop zones 
-goby_master[goby_master$Zone != "NE" & goby_master$Zone != "SE" & goby_master$Zone != "SW"]
+#goby_master[goby_master$Zone != "NE" & goby_master$Zone != "SE" & goby_master$Zone != "SW"]
+
+#KeepZone<- c("E", "W", "NW")
+
+goby_master <-  goby_master %>% filter(Zone != "NE") %>% 
+  filter(Zone != "SE") %>% 
+  filter(Zone != "SW") 
+
 View(goby_master)
 
-#average water temperature
-goby_master$avg_WT <- rowMeans(goby_master[30,31], na.rm=TRUE)
+#goby_master$avg_WT <- mean(goby_master$Water_temp_1, goby_master$Water_temp_1)
 
-library(dplyr)
-goby_master %>%
-  mutate(val= (pmax(Water_temp_1, Water_temp_2, na.rm=TRUE)+
-                 pmin(Water_temp_1, Water_temp_2, na.rm=TRUE))/2)
+# Duplicates the temp_mean below...can delete
+# library(dplyr)
+# goby_master <- goby_master %>%
+#   mutate(val= (pmax(Water_temp_1, Water_temp_2, na.rm=TRUE)+
+#                  pmin(Water_temp_1, Water_temp_2, na.rm=TRUE))/2)
 
-library(data.table)
-setDT(goby_master)
-goby_master[,.(rMean=rowMeans(.SD,na.rm = T)),.SDcols = c('Water_temp_1','Water_temp_2')]
+# Works fine for mean temp
+goby_master <- goby_master %>% mutate(temp_mean = rowMeans(across(starts_with("Water_temp")), na.rm=TRUE))
 
-goby_master$avg_wt <- rowMeans(goby_master[ , c(30,31)], na.rm=TRUE)
+
+plot(goby_master$val, goby_master$temp_mean)
+
+#minimum DO
+goby_master$min_DO <- do.call(pmin, c(goby_master[,c("DO_1", "DO_2")], na.rm=TRUE))
+View(goby_master)
+
+
+
+
+
 
 
 #####OK goby_master ready for analysis -----------------------------------------
