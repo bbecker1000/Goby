@@ -256,6 +256,9 @@ View(goby_master)
 
 
 
+#minimum DO
+goby_master$min_DO <- do.call(pmin, c(goby_master[,c("DO_1", "DO_2")], na.rm=TRUE))
+View(goby_master)
 
 #####OK goby_master ready for analysis -----------------------------------------
 
