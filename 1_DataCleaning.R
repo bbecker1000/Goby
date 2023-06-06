@@ -252,12 +252,37 @@ goby_master$min_DO <- do.call(pmin, c(goby_master[,c("DO_1", "DO_2")], na.rm=TRU
 View(goby_master)
 
 #join rainfall data by year
+rainfall_data <- rainfall_data[,-c(4:15)]
 goby_master_1 <- left_join(goby_master, rainfall_data, by = "Year")
+hist(rainfall_data$Rain_Sum)
 
 #join breach data based on year
+library(tidyverse)
+breach_data <- read_csv("Data/breach_data.csv", 
+                        col_types = cols(Date_Latest_Breach = col_date(format = "%m/%d/%Y")))
 goby_master_2 <- left_join(goby_master_1, breach_data, by = "Year")
 View(goby_master_2)
 
+#create new column for Date.x - Date_Latest_Breach
+goby_master_2$breach_days <- goby_master_2$Date.x - goby_master_2$Date_Latest_Breach
+goby_master_2$breach_days <- as.numeric(goby_master_2$breach_days)
+View(goby_master_2)
+
+#remove days inside value or use lubridate package for calculating difference in days
+hist(goby_master_2$breach_days)
+
+#change "muck (organic)" to "muck"
+goby_master_2$Dom_substrate[goby_master_2$Dom_substrate == 'muck (organic)'] <- 'muck'
+goby_master_2$Subdom_substrate[goby_master_2$Subdom_substrate == 'muck (organic)'] <- 'muck'
+View(goby_master_2)
+
+#calculate density for each species (SC, SB, TW)
+goby_master_2$TW_density <- (goby_master_2$Sum_TW/goby_master_2$volume)
+  goby_master_2$SC_density <- (goby_master_2$Sum_SC/goby_master_2$volume)
+  goby_master_2$SB_density <- (goby_master_2$Sum_SB/goby_master_2$volume)
+  View(goby_master_2)
+  
+str(goby_master_2)
 #####OK goby_master ready for analysis -----------------------------------------
 
 
