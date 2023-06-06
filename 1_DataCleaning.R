@@ -244,12 +244,14 @@ View(goby_master)
 # Works fine for mean temp
 goby_master <- goby_master %>% mutate(temp_mean = rowMeans(across(starts_with("Water_temp")), na.rm=TRUE))
 
-
-plot(goby_master$val, goby_master$temp_mean)
-
 #minimum DO
 goby_master$min_DO <- do.call(pmin, c(goby_master[,c("DO_1", "DO_2")], na.rm=TRUE))
-View(goby_master)
+#View(goby_master)
+
+
+rainfall_data <- read_csv("Data/rainfall_data.csv")
+breach_data <- read_csv("Data/breach_data.csv", 
+                        col_types = cols(Date_Latest_Breach = col_date(format = "%m/%d/%Y")))
 
 #join rainfall data by year
 goby_master_1 <- left_join(goby_master, rainfall_data, by = "Year")
@@ -258,6 +260,8 @@ goby_master_1 <- left_join(goby_master, rainfall_data, by = "Year")
 goby_master_2 <- left_join(goby_master_1, breach_data, by = "Year")
 View(goby_master_2)
 
+
+goby_master_2$breach_days <- goby_master_2$Date.x - goby_master_2$Date_Latest_Breach
 #####OK goby_master ready for analysis -----------------------------------------
 
 

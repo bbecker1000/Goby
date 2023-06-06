@@ -3,6 +3,9 @@ source("1_DataCleaning.R")
 library(lme4)
 library(sjPlot)
 
+
+
+
 hist(goby_master$Sum_TW)
 
 hist(goby_master$Sum_TW/(goby_master$volume))
