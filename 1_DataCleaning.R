@@ -283,6 +283,17 @@ goby_master_2$TW_density <- (goby_master_2$Sum_TW/goby_master_2$volume)
   View(goby_master_2)
   
 str(goby_master_2)
+
+#calculate years since latest breach
+goby_master_2$Breach_Year <- format.Date(as.Date(goby_master_2$Date_Latest_Breach, format="%d/%m/%Y"),"%Y")
+View(goby_master_2)
+goby_master_2$Since_Breach <- as.numeric(goby_master_2$Year) - as.numeric(goby_master_2$Breach_Year)
+
+#calculate total number of breach days per year (import from excel)
+library(tidyverse)
+goby_master_2 <- left_join(goby_master_2, total_breaches, by = "Year")
+
+
 #####OK goby_master ready for analysis -----------------------------------------
 
 
