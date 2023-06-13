@@ -293,6 +293,92 @@ goby_master_2$Since_Breach <- as.numeric(goby_master_2$Year) - as.numeric(goby_m
 library(tidyverse)
 goby_master_2 <- left_join(goby_master_2, total_breaches, by = "Year")
 
+#get stats for each variable
+
+#Date.x
+summary(goby_master_2$Date.x)
+sum(is.na(goby_master_2$Date.x))
+list(goby_master_2$Date.x)
+hist(goby_master_2$Date.x, breaks=30)
+
+#Zone
+summary(goby_master_2$Zone)
+sum(is.na(goby_master_2$Zone))
+tabledata <- table(goby_master_2$Zone)
+barplot(tabledata)
+
+#Dom_substrate
+library(dplyr)
+goby_master_2 %>% 
+  count(Dom_substrate)
+sum(is.na(goby_master_2$Dom_substrate))
+list(goby_master_2$Dom_substrate)
+tabledata <- table(goby_master_2$Dom_substrate)
+barplot(tabledata)
+
+#SAV
+summary(goby_master_2$SAV)
+goby_master_2 %>% 
+  count(SAV)
+hist(goby_master_2$SAV)
+
+#Season
+goby_master_2 %>% 
+  count(Season)
+sum(is.na(goby_master_2$Season))
+
+#Sum_TW
+summary(goby_master_2$Sum_TW)
+sum(is.na(goby_master_2$Sum_TW))
+hist(goby_master_2$Sum_TW)
+
+#Sum_SC
+summary(goby_master_2$Sum_SC)
+sum(is.na(goby_master_2$Sum_SC))
+hist(goby_master_2$Sum_SC)
+
+#Sum_SB
+summary(goby_master_2$Sum_SB)
+sum(is.na(goby_master_2$Sum_SB))
+hist(goby_master_2$Sum_SB)
+
+#Volume
+summary(goby_master_2$volume)
+sum(is.na(goby_master_2$volume))
+hist(goby_master_2$volume)
+
+#temp_mean
+summary(goby_master_2$temp_mean)
+hist(goby_master_2$temp_mean)
+
+#min_DO
+summary(goby_master_2$min_DO)
+hist(goby_master_2$min_DO)
+
+#rain_sum
+summary(goby_master_2$Rain_Sum)
+sum(is.na(goby_master_2$Rain_Sum))
+hist(goby_master_2$Rain_Sum)
+
+#breach_days
+summary(goby_master_2$breach_days)
+sum(is.na(goby_master_2$breach_days))
+hist(goby_master_2$breach_days)
+
+#TW_density
+summary(goby_master_2$TW_density)
+sum(is.na(goby_master_2$TW_density))
+hist(goby_master_2$TW_density)
+
+#SC_density
+summary(goby_master_2$SC_density)
+sum(is.na(goby_master_2$SC_density))
+hist(goby_master_2$SC_density)
+
+#SB_density
+summary(goby_master_2$SB_density)
+sum(is.na(goby_master_2$SB_density))
+hist(goby_master_2$SB_density)
 
 #####OK goby_master ready for analysis -----------------------------------------
 
