@@ -10,7 +10,14 @@ water_qual_event <- read_csv("Data/water_qual_event.csv",
                              col_types = cols(Date = col_date(format = "%m/%d/%Y")))
 View(water_qual_event)
 fish_dat <- read_csv("Data/fish_dat.csv", 
-                     col_types = cols(Year = col_double())) # import notes problems on rows 12485 and 13444, but I don't see anything wrong.
+                     col_types = cols(Year = col_double()))
+View(fish_dat)
+
+#some entries in Station ID need to be converted to all caps
+fish_dat$Station_ID = toupper(fish_dat$Station_ID)
+
+
+# import notes problems on rows 12485 and 13444, but I don't see anything wrong.
 #note that mort and Injury are all NA
 
 
@@ -18,6 +25,7 @@ water_qual <- read_csv("Data/water_qual.csv",
                        col_types = cols(Date = col_date(format = "%m/%d/%Y"), 
                                         ID = col_character(), Start_time = col_character()))
 
+View(water_qual)
 hist(fish_dat$Length) #outlier length on a stickleback (370mm!)  Check with Darren
 
 
@@ -32,20 +40,22 @@ water_qual_event$Unique_ID2 <- paste0(water_qual_event$Year,"_",
                                       water_qual_event$Station_ID)
 duplicated(water_qual_event$Unique_ID2) #yay, no duplicates #406 rows
 
+View(water_qual_event)
+
 #Water_qual
 water_qual$Year <- year(water_qual$Date)
 water_qual$Month <- month(water_qual$Date)
 water_qual$Season <- ifelse(water_qual$Month < 6, "Winter", "Fall")
 water_qual$Unique_ID2 <- paste0(water_qual$Year,"_", 
-                                      water_qual$Season, "_", 
-                                      water_qual$Station_ID)
+                                water_qual$Season, "_", 
+                                water_qual$Station_ID)
 duplicated(water_qual$Unique_ID2) #duplicates expected will fix with pivot wider
 
 
-#fish_dat - seaon and year done
+#fish_dat - sesaon and year done
 fish_dat$Unique_ID2 <- paste0(fish_dat$Year,"_", 
-                                fish_dat$Season, "_", 
-                                fish_dat$Station_ID)
+                              fish_dat$Season, "_", 
+                              fish_dat$Station_ID)
 duplicated(fish_dat$Unique_ID2) #mostly duplicate will fix with summarize
 
 #lets make water_qual wide so each even has unique row.  
@@ -92,8 +102,8 @@ View(WQ_event_WQ)
 unique(fish_dat$Species) 
 fish_dat$Species <- 
   ifelse(fish_dat$Species == "PSC", "SC",
-    ifelse(fish_dat$Species == "SSC", "SC", 
-        ifelse(fish_dat$Species == "SCU", "SC", fish_dat$Species)))
+         ifelse(fish_dat$Species == "SSC", "SC", 
+                ifelse(fish_dat$Species == "SCU", "SC", fish_dat$Species)))
 unique(fish_dat$Species) #looks good
 
 # get sum fish per day
@@ -102,6 +112,7 @@ fish_dat_sum <-
   group_by(Unique_ID2, Species) %>%                         
   summarise_at(vars(Numbers),             
                list(spec_sum = sum))
+View(fish_dat_sum)
 
 # sum fish into columns by species
 fish_dat_sum <- 
@@ -110,11 +121,13 @@ fish_dat_sum <-
               names_from = "Species",
               values_from = "spec_sum",
               names_prefix = "Sum_")
-fish_dat_sum
-fish_dat_sum <- fish_dat_sum %>% select(-Sum_NONE) #remove "none" column
 
+fish_dat_sum <- fish_dat_sum %>% select(-Sum_NONE) #remove "none" column
+fish_dat_sum[is.na(fish_dat_sum)] <- 0
+View(fish_dat_sum)
 
 #calculate min, max, mean for species length per unique ID  (consider adding 95% CI) !!
+## FIX so that column is pulling TWG length only and not all species lengths
 fish_stats <- fish_dat %>%
   group_by(Unique_ID2) %>%                         
   summarise_at(vars(Length),             
@@ -169,10 +182,12 @@ microsporidium
 #fish_mortality <- all NAs, so check original data
 #fish_injury    <- all NAs, so check original data
 
+#change unique ID so all letters are capitalized to match with wq wide
 goby_master <- list(water_qual_event, water_qual_wide, fish_dat_sum, fish_stats, microsporidium) %>%   #will add fish_mort
   reduce(left_join, by = "Unique_ID2")
 str(goby_master)
 View(goby_master)
+
 #Volume is just mean depth by area and volumer has one na.  so replace all and make numeric
 goby_master$volume <- goby_master$Ave_depth * goby_master$Area
 goby_master$Volumer <- as.numeric(goby_master$Volumer)
@@ -244,8 +259,7 @@ View(goby_master)
 # Works fine for mean temp
 goby_master <- goby_master %>% mutate(temp_mean = rowMeans(across(starts_with("Water_temp")), na.rm=TRUE))
 
-
-plot(goby_master$val, goby_master$temp_mean)
+#plot(goby_master$val, goby_master$temp_mean)
 
 #minimum DO
 goby_master$min_DO <- do.call(pmin, c(goby_master[,c("DO_1", "DO_2")], na.rm=TRUE))
@@ -261,12 +275,10 @@ library(tidyverse)
 breach_data <- read_csv("Data/breach_data.csv", 
                         col_types = cols(Date_Latest_Breach = col_date(format = "%m/%d/%Y")))
 goby_master_2 <- left_join(goby_master_1, breach_data, by = "Year")
-View(goby_master_2)
 
 #create new column for Date.x - Date_Latest_Breach
 goby_master_2$breach_days <- goby_master_2$Date.x - goby_master_2$Date_Latest_Breach
 goby_master_2$breach_days <- as.numeric(goby_master_2$breach_days)
-View(goby_master_2)
 
 #remove days inside value or use lubridate package for calculating difference in days
 hist(goby_master_2$breach_days)
@@ -274,7 +286,6 @@ hist(goby_master_2$breach_days)
 #change "muck (organic)" to "muck"
 goby_master_2$Dom_substrate[goby_master_2$Dom_substrate == 'muck (organic)'] <- 'muck'
 goby_master_2$Subdom_substrate[goby_master_2$Subdom_substrate == 'muck (organic)'] <- 'muck'
-View(goby_master_2)
 
 #calculate density for each species (SC, SB, TW)
 goby_master_2$TW_density <- (goby_master_2$Sum_TW/goby_master_2$volume)
@@ -286,12 +297,12 @@ str(goby_master_2)
 
 #calculate years since latest breach
 goby_master_2$Breach_Year <- format.Date(as.Date(goby_master_2$Date_Latest_Breach, format="%d/%m/%Y"),"%Y")
-View(goby_master_2)
 goby_master_2$Since_Breach <- as.numeric(goby_master_2$Year) - as.numeric(goby_master_2$Breach_Year)
 
 #calculate total number of breach days per year (import from excel)
 library(tidyverse)
 goby_master_2 <- left_join(goby_master_2, total_breaches, by = "Year")
+
 
 #get stats for each variable
 
@@ -347,6 +358,7 @@ summary(goby_master_2$volume)
 sum(is.na(goby_master_2$volume))
 hist(goby_master_2$volume)
 
+
 #temp_mean
 summary(goby_master_2$temp_mean)
 hist(goby_master_2$temp_mean)
@@ -380,8 +392,11 @@ summary(goby_master_2$SB_density)
 sum(is.na(goby_master_2$SB_density))
 hist(goby_master_2$SB_density)
 
-#####OK goby_master ready for analysis -----------------------------------------
 
+write.csv(goby_master_2, "/Users/Thuy-Tien/R files/goby/goby_master_2.csv", row.names=FALSE)
+
+
+#####OK goby_master ready for analysis -----------------------------------------
 
 
 
