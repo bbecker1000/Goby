@@ -3,9 +3,6 @@ source("1_DataCleaning.R")
 library(lme4)
 library(sjPlot)
 
-
-
-
 hist(goby_master$Sum_TW)
 
 hist(goby_master$Sum_TW/(goby_master$volume))
@@ -28,7 +25,7 @@ plot(goby_master$Zone)
 
 m1 <- glmer(Sum_TW ~ Zone + 
               Dom_substrate +  (pool Muck)
-              scale(Year) + 
+            scale(Year) + 
               Season +   # DF should probably remove winter data  perhaps just look at a seasonal dynamics standpoint and flushed out in winter
               scale(Sum_SB) + 
               scale(Sum_SC) + 
@@ -42,4 +39,3 @@ summary(m1)
 plot_model(m1, type = "eff")
 plot(m1) # need to identify a large outlier, also only 113 complete cases
 performance::r2(m1)
-
