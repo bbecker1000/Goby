@@ -19,8 +19,6 @@ fish_dat$Station_ID = toupper(fish_dat$Station_ID)
 
 # import notes problems on rows 12485 and 13444, but I don't see anything wrong.
 #note that mort and Injury are all NA
-
-
 water_qual <- read_csv("Data/water_qual.csv", 
                        col_types = cols(Date = col_date(format = "%m/%d/%Y"), 
                                         ID = col_character(), Start_time = col_character()))
@@ -114,6 +112,44 @@ fish_dat_sum <-
                list(spec_sum = sum))
 View(fish_dat_sum)
 
+#create length columns for each species
+fish_dat_length <- 
+  fish_dat %>% 
+  pivot_wider(id_cols = "Unique_ID2",
+              names_from = "Species",
+              values_from = "Length",
+              names_prefix = "Length_")
+View(fish_dat_length2)
+
+#expand to individual rows instead of csv
+fish_dat_length2 <- fish_dat_length %>% 
+  mutate(Length_TW = strsplit(as.character(Length_TW), ",")) %>% 
+  unnest(Length_TW)#caused single SB value to fill in for expanded TW rows...need to fix!!!
+
+fish_dat_length3 <- fish_dat_length2 %>% 
+  mutate(Length_SB = strsplit(as.character(Length_SB), ",", fixed = TRUE)) %>% 
+  unnest(Length_SB)
+
+fish_dat_length4 <- fish_dat_length3 %>% 
+  mutate(Length_SC = strsplit(as.character(Length_SC), ",", fixed = TRUE)) %>% 
+  unnest(Length_SC)#line 127 error happened to all values that were missing... filled in missing values with the previous value
+
+View(fish_dat_length4)
+
+#need to remove extra characters "c", "()"
+fish_dat_length4$Length_TW<-gsub("c","",as.character(fish_dat_length4$Length_TW))
+fish_dat_length4$Length_TW<-gsub("[()]","",as.character(fish_dat_length4$Length_TW))
+fish_dat_length4$Length_SB<-gsub("c","",as.character(fish_dat_length4$Length_SB))
+fish_dat_length4$Length_SB<-gsub("[()]","",as.character(fish_dat_length4$Length_SB))
+fish_dat_length4$Length_SC<-gsub("c","",as.character(fish_dat_length4$Length_SC))
+fish_dat_length4$Length_SC<-gsub("[()]","",as.character(fish_dat_length4$Length_SC))
+
+#left with white space - need to remove
+fish_dat_length4$Length_TW <- trimws(fish_dat_length4$Length_TW)
+fish_dat_length4$Length_SB <- trimws(fish_dat_length4$Length_SB)
+fish_dat_length4$Length_SC <- trimws(fish_dat_length4$Length_SC)
+
+
 # sum fish into columns by species
 fish_dat_sum <- 
   fish_dat_sum %>% 
@@ -128,12 +164,30 @@ View(fish_dat_sum)
 
 #calculate min, max, mean for species length per unique ID  (consider adding 95% CI) !!
 ## FIX so that column is pulling TWG length only and not all species lengths
-fish_stats <- fish_dat %>%
+#this section has not run yet - need to fix error on line 127
+TW_stats <- fish_dat_length4 %>%
   group_by(Unique_ID2) %>%                         
-  summarise_at(vars(Length),             
-               list(min_length = min,
-                    max_length = max,
-                    mean_length = mean))
+  summarise_at(vars(Length_TW),             
+               list(TW_min_length = min,
+                    TW_max_length = max,
+                    TW_mean_length = mean))
+
+SB_stats <- fish_dat_length4 %>%
+  group_by(Unique_ID2) %>%                         
+  summarise_at(vars(Length_SB),             
+               list(SB_min_length = min,
+                    SB_max_length = max,
+                    SB_mean_length = mean))
+
+SC_stats <- fish_dat_length4 %>%
+  group_by(Unique_ID2) %>%                         
+  summarise_at(vars(Length_SC),             
+               list(SC_min_length = min,
+                    SC_max_length = max,
+                    SC_mean_length = mean))
+
+#join all min/max/mean columns into one table, then join to goby_master
+need to do
 
 #calculate sum of mortality per unique ID
 
