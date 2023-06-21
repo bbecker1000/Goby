@@ -96,6 +96,7 @@ m1.no_temp_1 <- glmer(Sum_TW ~
 summary(m1.no_breach)  #temp = -0.11 (sig)
 summary(m1.no_temp_1)  #breach = -1.95,  
 summary(m1)            #temp = -0.05 (ns), breach = -1.8
+## so once we know breach, there is little additional info gained from knowing temp.
 ## so breach constant, but temp weaker (and non-significant) with breach included
 ## conclude that breach is the causal variable
 ## do same for 
