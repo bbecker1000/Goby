@@ -11,7 +11,7 @@ water_qual_event <- read_csv("Data/water_qual_event.csv",
 View(water_qual_event)
 fish_dat <- read_csv("Data/fish_dat.csv", 
                      col_types = cols(Year = col_double()))
-View(fish_dat)
+#View(fish_dat)
 
 #some entries in Station ID need to be converted to all caps
 fish_dat$Station_ID = toupper(fish_dat$Station_ID)
@@ -23,7 +23,7 @@ water_qual <- read_csv("Data/water_qual.csv",
                        col_types = cols(Date = col_date(format = "%m/%d/%Y"), 
                                         ID = col_character(), Start_time = col_character()))
 
-View(water_qual)
+#View(water_qual)
 hist(fish_dat$Length) #outlier length on a stickleback (370mm!)  Check with Darren
 
 
@@ -38,11 +38,7 @@ water_qual_event$Unique_ID2 <- paste0(water_qual_event$Year,"_",
                                       water_qual_event$Station_ID)
 duplicated(water_qual_event$Unique_ID2) #yay, no duplicates #406 rows
 
-<<<<<<< HEAD
-##View(water_qual_event)
-=======
-View(water_qual_event)
->>>>>>> 8a37e339898bc4277040f1030eebfe7b941fdbb8
+#View(water_qual_event)
 
 #Water_qual
 water_qual$Year <- year(water_qual$Date)
@@ -68,7 +64,7 @@ duplicated(fish_dat$Unique_ID2) #mostly duplicate will fix with summarize
 water_qual_temp <- water_qual %>% 
   mutate(Group_ID = data.table::rowid(Unique_ID2)) #changed to Unique_ID2
 
-###View(water_qual_temp)
+#View(water_qual_temp)
 hist(water_qual_temp$Group_ID)
 
 # looks like some data are more than just the 2 values...perhaps these can be deleted?  look at raw data to see why 3-6 samples at some events.
@@ -84,7 +80,7 @@ water_qual_wide <- water_qual_temp %>%
   pivot_wider(id_cols = c("Unique_ID2", "Date"), # added Date to keep in file
               names_from = "Group_ID",
               values_from = c("Water_temp", "Spec_cond", "Der_spec_cond", "DO", "Perc_sat", "pH")) #airtemp only 1 measurement
-##View(water_qual_wide) #has 397 rows, water_qual_event has 406 rows.  so some events missing WQ data?
+#View(water_qual_wide) #has 397 rows, water_qual_event has 406 rows.  so some events missing WQ data?
 
 # change some character to numeric
 water_qual_wide$Water_temp_1 <- as.numeric(water_qual_wide$Water_temp_1)
@@ -98,7 +94,7 @@ water_qual_wide$Perc_sat_2  <- as.numeric(water_qual_wide$Perc_sat_2)
 
 #join WQ_event and WQ
 WQ_event_WQ <- left_join(water_qual_event, water_qual_wide, by = "Unique_ID2")
-##View(WQ_event_WQ) 
+#View(WQ_event_WQ) 
 
 # fix some Species naming errors
 unique(fish_dat$Species) 
@@ -114,9 +110,6 @@ fish_dat_sum <-
   group_by(Unique_ID2, Species) %>%                         
   summarise_at(vars(Numbers),             
                list(spec_sum = sum))
-<<<<<<< HEAD
-#View(fish_dat_sum)
-=======
 View(fish_dat_sum)
 
 #create length columns for each species
@@ -126,7 +119,7 @@ fish_dat_length <-
               names_from = "Species",
               values_from = "Length",
               names_prefix = "Length_")
-View(fish_dat_length2)
+#View(fish_dat_length2)
 
 #expand to individual rows instead of csv
 fish_dat_length2 <- fish_dat_length %>% 
@@ -141,7 +134,7 @@ fish_dat_length4 <- fish_dat_length3 %>%
   mutate(Length_SC = strsplit(as.character(Length_SC), ",", fixed = TRUE)) %>% 
   unnest(Length_SC)#line 127 error happened to all values that were missing... filled in missing values with the previous value
 
-View(fish_dat_length4)
+#View(fish_dat_length4)
 
 #need to remove extra characters "c", "()"
 fish_dat_length4$Length_TW<-gsub("c","",as.character(fish_dat_length4$Length_TW))
@@ -156,7 +149,6 @@ fish_dat_length4$Length_TW <- trimws(fish_dat_length4$Length_TW)
 fish_dat_length4$Length_SB <- trimws(fish_dat_length4$Length_SB)
 fish_dat_length4$Length_SC <- trimws(fish_dat_length4$Length_SC)
 
->>>>>>> 8a37e339898bc4277040f1030eebfe7b941fdbb8
 
 # sum fish into columns by species
 fish_dat_sum <- 
@@ -168,20 +160,12 @@ fish_dat_sum <-
 
 fish_dat_sum <- fish_dat_sum %>% select(-Sum_NONE) #remove "none" column
 fish_dat_sum[is.na(fish_dat_sum)] <- 0
-<<<<<<< HEAD
 #View(fish_dat_sum)
-
-#calculate min, max, mean for species length per unique ID  (consider adding 95% CI) !!
-## FIX so that column is pulling TWG length only and not all species lengths
-fish_stats <- fish_dat %>%
-=======
-View(fish_dat_sum)
 
 #calculate min, max, mean for species length per unique ID  (consider adding 95% CI) !!
 ## FIX so that column is pulling TWG length only and not all species lengths
 #this section has not run yet - need to fix error on line 127
 TW_stats <- fish_dat_length4 %>%
->>>>>>> 8a37e339898bc4277040f1030eebfe7b941fdbb8
   group_by(Unique_ID2) %>%                         
   summarise_at(vars(Length_TW),             
                list(TW_min_length = min,
@@ -203,7 +187,7 @@ SC_stats <- fish_dat_length4 %>%
                     SC_mean_length = mean))
 
 #join all min/max/mean columns into one table, then join to goby_master
-need to do
+#need to do
 
 #calculate sum of mortality per unique ID
 
@@ -253,14 +237,10 @@ microsporidium
 #fish_injury    <- all NAs, so check original data
 
 #change unique ID so all letters are capitalized to match with wq wide
-goby_master <- list(water_qual_event, water_qual_wide, fish_dat_sum, fish_stats, microsporidium) %>%   #will add fish_mort
+goby_master <- list(water_qual_event, water_qual_wide, fish_dat_sum, microsporidium) %>%   #will add fish_mort ## removed fish_stats, 
   reduce(left_join, by = "Unique_ID2")
 str(goby_master)
-<<<<<<< HEAD
-#View(goby_master)
-=======
 View(goby_master)
->>>>>>> 8a37e339898bc4277040f1030eebfe7b941fdbb8
 
 #Volume is just mean depth by area and volumer has one na.  so replace all and make numeric
 goby_master$volume <- goby_master$Ave_depth * goby_master$Area
@@ -309,7 +289,7 @@ hist(goby_master$Water_temp_1)
 
 goby_master <-  goby_master %>% filter(Season != "Winter")
 
-##View(goby_master)
+#View(goby_master)
 
 # drop zones 
 #goby_master[goby_master$Zone != "NE" & goby_master$Zone != "SE" & goby_master$Zone != "SW"]
@@ -340,9 +320,10 @@ goby_master$min_DO <- do.call(pmin, c(goby_master[,c("DO_1", "DO_2")], na.rm=TRU
 #View(goby_master)
 
 #join rainfall data by year
+
 library(readr)
 rainfall_data <- read_csv("Data/rainfall_data.csv")
-#View(rainfall_data)
+rainfall_data
 
 rainfall_data <- rainfall_data[,-c(4:15)]
 goby_master_1 <- left_join(goby_master, rainfall_data, by = "Year")
@@ -378,6 +359,8 @@ goby_master_2$Breach_Year <- format.Date(as.Date(goby_master_2$Date_Latest_Breac
 goby_master_2$Since_Breach <- as.numeric(goby_master_2$Year) - as.numeric(goby_master_2$Breach_Year)
 
 #calculate total number of breach days per year (import from excel)
+
+### NEED TOTAL BREACH DATA
 library(tidyverse)
 goby_master_2 <- left_join(goby_master_2, total_breaches, by = "Year")
 
@@ -485,7 +468,3 @@ write.csv(goby_master_2, "/Users/Thuy-Tien/R files/goby/goby_master_2.csv", row.
 
 
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 8a37e339898bc4277040f1030eebfe7b941fdbb8

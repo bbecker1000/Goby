@@ -3,6 +3,8 @@ source("1_DataCleaning.R")
 library(lme4)
 library(sjPlot)
 
+goby_master <- goby_master_2
+
 hist(goby_master$Sum_TW)
 
 hist(goby_master$Sum_TW/(goby_master$volume))
@@ -24,13 +26,12 @@ plot(goby_master$Zone)
 #big test model
 
 m1 <- glmer(Sum_TW ~ Zone + 
-              Dom_substrate +  (pool Muck)
-            scale(Year) + 
-              Season +   # DF should probably remove winter data  perhaps just look at a seasonal dynamics standpoint and flushed out in winter
+              Dom_substrate +  # (pool Muck)
+              scale(Year) + 
               scale(Sum_SB) + 
               scale(Sum_SC) + 
               Water_temp_1 + # should we reduce the WQ variables?  keep Temp and DO for now.
-              (1|Zone) + (1|Season),
+              (1|Zone),
             data = goby_master,
             family = negative.binomial(1),  #poisson
             offset=log(volume))
