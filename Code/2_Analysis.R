@@ -2,6 +2,7 @@ source("1_DataCleaning.R")
 
 library(lme4)
 library(sjPlot)
+library(marginaleffects)
 
 goby_master <- goby_master_2
 
@@ -26,12 +27,13 @@ plot(goby_master$Zone)
 
 #big test model
 
-m1 <- glmer(Sum_TW ~ Zone + 
+m1 <- glmer(Sum_TW ~  
               Dom_substrate +  # (pool Muck)
-              scale(Year) + 
+              scale(Year) +
               scale(Sum_SB) + 
               scale(Sum_SC) + 
               Water_temp_1 + 
+              min_DO +
               Zone +# should we reduce the WQ variables?  keep Temp and DO for now.
               (1|Zone),
             data = goby_master,
@@ -40,6 +42,8 @@ m1 <- glmer(Sum_TW ~ Zone +
             offset=log(volume))
 
 summary(m1)
-plot_model(m1, type = "eff")
+p <- plot_model(m1, type = "eff")
+plot_grid(p)
+#plot_predictions(m1, condition = c("Year", "Zone"))
 plot(m1) # need to identify a large outlier, also only 316 complete cases
 performance::r2(m1)
