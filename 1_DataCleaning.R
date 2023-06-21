@@ -114,6 +114,7 @@ fish_dat_sum <-
 
 #create length columns for each species
 # 2023-06-21 Seems to work
+## but BB and TTB check on need for weighted means and how to get min and max.
 fish_dat_length <- 
   fish_dat %>% 
    filter(!is.na(Length)) %>%     # remove the NA lengths
@@ -371,6 +372,9 @@ goby_master_2$Breach_Year <- format.Date(as.Date(goby_master_2$Date_Latest_Breac
 goby_master_2$Since_Breach <- as.numeric(goby_master_2$Year) - as.numeric(goby_master_2$Breach_Year)
 
 #calculate total number of breach days per year (import from excel)
+
+## 2023-06-21
+## BB import total_breaches from new google folder...
 
 ### 2023-06-21
 ### NEED TOTAL BREACH DATA

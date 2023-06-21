@@ -17,6 +17,9 @@ goby_master
 ##goby_master$Sum_SC[is.na(goby_master$Sum_SC)] <- 0
 # goby_master$Sum_SB[is.na(goby_master$Sum_SB)] <- 0
 
+## check why have NAs
+goby_master$Since_Breach[is.na(goby_master$Since_Breach)] <- 0
+
 ##
 hist(goby_master$Sum_TW)
 hist(goby_master$Water_temp_1)
@@ -24,7 +27,8 @@ hist(goby_master$Sum_SC)
 hist(goby_master$Sum_SB)
 plot(goby_master$Zone)
 
-hist(goby_master$Since_Breach)
+hist(goby_master$Since_Breach)  
+
 
 
 #big test model
@@ -34,7 +38,8 @@ m1 <- glmer(Sum_TW ~
               scale(Year) +
               scale(Sum_SB) + 
               scale(Sum_SC) + 
-              Water_temp_1 + 
+              Rain_Sum +
+              temp_mean + 
               min_DO +
               Zone +
               Since_Breach + # should we reduce the WQ variables?  keep Temp and DO for now.
@@ -59,7 +64,8 @@ m1.no_breach <- glmer(Sum_TW ~
               scale(Year) +
               scale(Sum_SB) + 
               scale(Sum_SC) + 
-              Water_temp_1 + 
+                Rain_Sum +
+                temp_mean + 
               min_DO +
               #Since_Breach + 
               Zone +
@@ -75,7 +81,8 @@ m1.no_temp_1 <- glmer(Sum_TW ~
                         scale(Year) +
                         scale(Sum_SB) + 
                         scale(Sum_SC) + 
-                        #Water_temp_1 + 
+                        Rain_Sum +
+                        #temp_mean + 
                         #min_DO +
                         Since_Breach + 
                         Zone +
@@ -86,9 +93,14 @@ m1.no_temp_1 <- glmer(Sum_TW ~
                       family = negative.binomial(1),  #poisson
                       offset=log(volume))
 
-summary(m1.no_breach)  #temp = -0.08
-summary(m1.no_temp_1)  #breach = -1.9,  
-summary(m1)            #temp = -0.03, breach = -1.9
+summary(m1.no_breach)  #temp = -0.11 (sig)
+summary(m1.no_temp_1)  #breach = -1.95,  
+summary(m1)            #temp = -0.05 (ns), breach = -1.8
 ## so breach constant, but temp weaker (and non-significant) with breach included
 ## conclude that breach is the causal variable
+## do same for 
+  # substrate --> sculpin 
+  #breach --> stickleback
+  #breach --> SAV
+  # others...
 
