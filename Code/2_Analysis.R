@@ -24,6 +24,8 @@ hist(goby_master$Sum_SC)
 hist(goby_master$Sum_SB)
 plot(goby_master$Zone)
 
+hist(goby_master$Since_Breach)
+
 
 #big test model
 
@@ -34,7 +36,8 @@ m1 <- glmer(Sum_TW ~
               scale(Sum_SC) + 
               Water_temp_1 + 
               min_DO +
-              Zone +# should we reduce the WQ variables?  keep Temp and DO for now.
+              Zone +
+              Since_Breach + # should we reduce the WQ variables?  keep Temp and DO for now.
               (1|Zone),
             data = goby_master,
             #family = poisson,
@@ -42,8 +45,50 @@ m1 <- glmer(Sum_TW ~
             offset=log(volume))
 
 summary(m1)
-p <- plot_model(m1, type = "eff")
-plot_grid(p)
-#plot_predictions(m1, condition = c("Year", "Zone"))
+p.eff <- plot_model(m1, type = "eff")  #eff
+plot_grid(p.eff)
+p.resid <- plot_model(m1, type = "resid")
+p.resid
 plot(m1) # need to identify a large outlier, also only 316 complete cases
 performance::r2(m1)
+
+## causal on WQ and breach
+
+m1.no_breach <- glmer(Sum_TW ~  
+              Dom_substrate +  # (pool Muck)
+              scale(Year) +
+              scale(Sum_SB) + 
+              scale(Sum_SC) + 
+              Water_temp_1 + 
+              min_DO +
+              #Since_Breach + 
+              Zone +
+              # should we reduce the WQ variables?  keep Temp and DO for now.
+              (1|Zone),
+            data = goby_master,
+            #family = poisson,
+            family = negative.binomial(1),  #poisson
+            offset=log(volume))
+
+m1.no_temp_1 <- glmer(Sum_TW ~  
+                        Dom_substrate +  # (pool Muck)
+                        scale(Year) +
+                        scale(Sum_SB) + 
+                        scale(Sum_SC) + 
+                        #Water_temp_1 + 
+                        #min_DO +
+                        Since_Breach + 
+                        Zone +
+                        # should we reduce the WQ variables?  keep Temp and DO for now.
+                        (1|Zone),
+                      data = goby_master,
+                      #family = poisson,
+                      family = negative.binomial(1),  #poisson
+                      offset=log(volume))
+
+summary(m1.no_breach)  #temp = -0.08
+summary(m1.no_temp_1)  #breach = -1.9,  
+summary(m1)            #temp = -0.03, breach = -1.9
+## so breach constant, but temp weaker (and non-significant) with breach included
+## conclude that breach is the causal variable
+
