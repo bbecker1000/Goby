@@ -34,6 +34,7 @@ m1 <- glmer(Sum_TW ~
               scale(Year) +
               scale(Sum_SB) + 
               scale(Sum_SC) + 
+              Rain_Sum +
               Water_temp_1 + 
               min_DO +
               Zone +
@@ -59,6 +60,7 @@ m1.no_breach <- glmer(Sum_TW ~
               scale(Year) +
               scale(Sum_SB) + 
               scale(Sum_SC) + 
+                Rain_Sum +
               Water_temp_1 + 
               min_DO +
               #Since_Breach + 
@@ -75,6 +77,7 @@ m1.no_temp_1 <- glmer(Sum_TW ~
                         scale(Year) +
                         scale(Sum_SB) + 
                         scale(Sum_SC) + 
+                        Rain_Sum +
                         #Water_temp_1 + 
                         #min_DO +
                         Since_Breach + 
@@ -86,9 +89,14 @@ m1.no_temp_1 <- glmer(Sum_TW ~
                       family = negative.binomial(1),  #poisson
                       offset=log(volume))
 
-summary(m1.no_breach)  #temp = -0.08
+summary(m1.no_breach)  #temp = -0.1 (sig)
 summary(m1.no_temp_1)  #breach = -1.9,  
-summary(m1)            #temp = -0.03, breach = -1.9
+summary(m1)            #temp = -0.03 (ns), breach = -1.9
 ## so breach constant, but temp weaker (and non-significant) with breach included
 ## conclude that breach is the causal variable
+## do same for 
+  # substrate --> sculpin 
+  #breach --> stickleback
+  #breach --> SAV
+  # others...
 
