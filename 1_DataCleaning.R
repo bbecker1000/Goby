@@ -19,8 +19,6 @@ fish_dat$Station_ID = toupper(fish_dat$Station_ID)
 
 # import notes problems on rows 12485 and 13444, but I don't see anything wrong.
 #note that mort and Injury are all NA
-
-
 water_qual <- read_csv("Data/water_qual.csv", 
                        col_types = cols(Date = col_date(format = "%m/%d/%Y"), 
                                         ID = col_character(), Start_time = col_character()))
@@ -40,7 +38,11 @@ water_qual_event$Unique_ID2 <- paste0(water_qual_event$Year,"_",
                                       water_qual_event$Station_ID)
 duplicated(water_qual_event$Unique_ID2) #yay, no duplicates #406 rows
 
+<<<<<<< HEAD
 ##View(water_qual_event)
+=======
+View(water_qual_event)
+>>>>>>> 8a37e339898bc4277040f1030eebfe7b941fdbb8
 
 #Water_qual
 water_qual$Year <- year(water_qual$Date)
@@ -112,7 +114,49 @@ fish_dat_sum <-
   group_by(Unique_ID2, Species) %>%                         
   summarise_at(vars(Numbers),             
                list(spec_sum = sum))
+<<<<<<< HEAD
 #View(fish_dat_sum)
+=======
+View(fish_dat_sum)
+
+#create length columns for each species
+fish_dat_length <- 
+  fish_dat %>% 
+  pivot_wider(id_cols = "Unique_ID2",
+              names_from = "Species",
+              values_from = "Length",
+              names_prefix = "Length_")
+View(fish_dat_length2)
+
+#expand to individual rows instead of csv
+fish_dat_length2 <- fish_dat_length %>% 
+  mutate(Length_TW = strsplit(as.character(Length_TW), ",")) %>% 
+  unnest(Length_TW)#caused single SB value to fill in for expanded TW rows...need to fix!!!
+
+fish_dat_length3 <- fish_dat_length2 %>% 
+  mutate(Length_SB = strsplit(as.character(Length_SB), ",", fixed = TRUE)) %>% 
+  unnest(Length_SB)
+
+fish_dat_length4 <- fish_dat_length3 %>% 
+  mutate(Length_SC = strsplit(as.character(Length_SC), ",", fixed = TRUE)) %>% 
+  unnest(Length_SC)#line 127 error happened to all values that were missing... filled in missing values with the previous value
+
+View(fish_dat_length4)
+
+#need to remove extra characters "c", "()"
+fish_dat_length4$Length_TW<-gsub("c","",as.character(fish_dat_length4$Length_TW))
+fish_dat_length4$Length_TW<-gsub("[()]","",as.character(fish_dat_length4$Length_TW))
+fish_dat_length4$Length_SB<-gsub("c","",as.character(fish_dat_length4$Length_SB))
+fish_dat_length4$Length_SB<-gsub("[()]","",as.character(fish_dat_length4$Length_SB))
+fish_dat_length4$Length_SC<-gsub("c","",as.character(fish_dat_length4$Length_SC))
+fish_dat_length4$Length_SC<-gsub("[()]","",as.character(fish_dat_length4$Length_SC))
+
+#left with white space - need to remove
+fish_dat_length4$Length_TW <- trimws(fish_dat_length4$Length_TW)
+fish_dat_length4$Length_SB <- trimws(fish_dat_length4$Length_SB)
+fish_dat_length4$Length_SC <- trimws(fish_dat_length4$Length_SC)
+
+>>>>>>> 8a37e339898bc4277040f1030eebfe7b941fdbb8
 
 # sum fish into columns by species
 fish_dat_sum <- 
@@ -124,16 +168,42 @@ fish_dat_sum <-
 
 fish_dat_sum <- fish_dat_sum %>% select(-Sum_NONE) #remove "none" column
 fish_dat_sum[is.na(fish_dat_sum)] <- 0
+<<<<<<< HEAD
 #View(fish_dat_sum)
 
 #calculate min, max, mean for species length per unique ID  (consider adding 95% CI) !!
 ## FIX so that column is pulling TWG length only and not all species lengths
 fish_stats <- fish_dat %>%
+=======
+View(fish_dat_sum)
+
+#calculate min, max, mean for species length per unique ID  (consider adding 95% CI) !!
+## FIX so that column is pulling TWG length only and not all species lengths
+#this section has not run yet - need to fix error on line 127
+TW_stats <- fish_dat_length4 %>%
+>>>>>>> 8a37e339898bc4277040f1030eebfe7b941fdbb8
   group_by(Unique_ID2) %>%                         
-  summarise_at(vars(Length),             
-               list(min_length = min,
-                    max_length = max,
-                    mean_length = mean))
+  summarise_at(vars(Length_TW),             
+               list(TW_min_length = min,
+                    TW_max_length = max,
+                    TW_mean_length = mean))
+
+SB_stats <- fish_dat_length4 %>%
+  group_by(Unique_ID2) %>%                         
+  summarise_at(vars(Length_SB),             
+               list(SB_min_length = min,
+                    SB_max_length = max,
+                    SB_mean_length = mean))
+
+SC_stats <- fish_dat_length4 %>%
+  group_by(Unique_ID2) %>%                         
+  summarise_at(vars(Length_SC),             
+               list(SC_min_length = min,
+                    SC_max_length = max,
+                    SC_mean_length = mean))
+
+#join all min/max/mean columns into one table, then join to goby_master
+need to do
 
 #calculate sum of mortality per unique ID
 
@@ -186,7 +256,11 @@ microsporidium
 goby_master <- list(water_qual_event, water_qual_wide, fish_dat_sum, fish_stats, microsporidium) %>%   #will add fish_mort
   reduce(left_join, by = "Unique_ID2")
 str(goby_master)
+<<<<<<< HEAD
 #View(goby_master)
+=======
+View(goby_master)
+>>>>>>> 8a37e339898bc4277040f1030eebfe7b941fdbb8
 
 #Volume is just mean depth by area and volumer has one na.  so replace all and make numeric
 goby_master$volume <- goby_master$Ave_depth * goby_master$Area
@@ -411,3 +485,7 @@ write.csv(goby_master_2, "/Users/Thuy-Tien/R files/goby/goby_master_2.csv", row.
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8a37e339898bc4277040f1030eebfe7b941fdbb8
