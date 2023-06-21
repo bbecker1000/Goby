@@ -12,11 +12,12 @@ goby_master
 #Need to get in rain and wind data !
 
 #Temporarily non-goby fish NA to zero #ask Darren
-goby_master$Sum_SC[is.na(goby_master$Sum_SC)] <- 0
-goby_master$Sum_SB[is.na(goby_master$Sum_SB)] <- 0
+#no longer needed
+##goby_master$Sum_SC[is.na(goby_master$Sum_SC)] <- 0
+# goby_master$Sum_SB[is.na(goby_master$Sum_SB)] <- 0
 
 ##
-
+hist(goby_master$Sum_TW)
 hist(goby_master$Water_temp_1)
 hist(goby_master$Sum_SC)
 hist(goby_master$Sum_SB)
@@ -30,13 +31,15 @@ m1 <- glmer(Sum_TW ~ Zone +
               scale(Year) + 
               scale(Sum_SB) + 
               scale(Sum_SC) + 
-              Water_temp_1 + # should we reduce the WQ variables?  keep Temp and DO for now.
+              Water_temp_1 + 
+              Zone +# should we reduce the WQ variables?  keep Temp and DO for now.
               (1|Zone),
             data = goby_master,
+            #family = poisson,
             family = negative.binomial(1),  #poisson
             offset=log(volume))
 
 summary(m1)
 plot_model(m1, type = "eff")
-plot(m1) # need to identify a large outlier, also only 113 complete cases
+plot(m1) # need to identify a large outlier, also only 316 complete cases
 performance::r2(m1)

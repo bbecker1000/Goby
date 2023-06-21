@@ -110,16 +110,25 @@ fish_dat_sum <-
   group_by(Unique_ID2, Species) %>%                         
   summarise_at(vars(Numbers),             
                list(spec_sum = sum))
-View(fish_dat_sum)
+(fish_dat_sum)
 
 #create length columns for each species
+# 2023-06-21 Seems to work
 fish_dat_length <- 
   fish_dat %>% 
+   filter(!is.na(Length)) %>%     # remove the NA lengths
   pivot_wider(id_cols = "Unique_ID2",
               names_from = "Species",
               values_from = "Length",
-              names_prefix = "Length_")
-#View(fish_dat_length2)
+              names_prefix = "Length_",
+              values_fn = mean)   # added to get mean for the multiple groups of same 
+(fish_dat_length2)
+hist(fish_dat_length$Length_TW)
+hist(fish_dat_length$Length_SB)
+hist(fish_dat_length$Length_SC)
+
+
+## 2023-06-21 LETS TALK THROUGH BELOW SO BB UNDERSTANDS BETTER. 
 
 #expand to individual rows instead of csv
 fish_dat_length2 <- fish_dat_length %>% 
@@ -150,6 +159,9 @@ fish_dat_length4$Length_SB <- trimws(fish_dat_length4$Length_SB)
 fish_dat_length4$Length_SC <- trimws(fish_dat_length4$Length_SC)
 
 
+## 2023-06-21  ALL GOOD FROM HERE DOWN EXCEP NEED BREACH DATA.
+###---------
+
 # sum fish into columns by species
 fish_dat_sum <- 
   fish_dat_sum %>% 
@@ -165,7 +177,7 @@ fish_dat_sum[is.na(fish_dat_sum)] <- 0
 #calculate min, max, mean for species length per unique ID  (consider adding 95% CI) !!
 ## FIX so that column is pulling TWG length only and not all species lengths
 #this section has not run yet - need to fix error on line 127
-TW_stats <- fish_dat_length4 %>%
+TW_stats <- fish_dat_length %>%
   group_by(Unique_ID2) %>%                         
   summarise_at(vars(Length_TW),             
                list(TW_min_length = min,
@@ -360,6 +372,7 @@ goby_master_2$Since_Breach <- as.numeric(goby_master_2$Year) - as.numeric(goby_m
 
 #calculate total number of breach days per year (import from excel)
 
+### 2023-06-21
 ### NEED TOTAL BREACH DATA
 library(tidyverse)
 goby_master_2 <- left_join(goby_master_2, total_breaches, by = "Year")
