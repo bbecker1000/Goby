@@ -20,8 +20,14 @@ goby_master
 ## check why have NAs
 goby_master$Since_Breach[is.na(goby_master$Since_Breach)] <- 0
 
+goby_master$Dom_substrate <- ifelse(goby_master$Dom_substrate == "corophium_tubes", 
+                                    "muck", goby_master$Dom_substrate)
+
+
+View(goby_master)
 ##
 hist(goby_master$Sum_TW)
+(goby_master$Dom_substrate)
 hist(goby_master$Water_temp_1)
 hist(goby_master$Sum_SC)
 hist(goby_master$Sum_SB)
@@ -34,7 +40,8 @@ hist(goby_master$Since_Breach)
 #big test model
 
 m1 <- glmer(Sum_TW ~  
-              Dom_substrate +  # (pool Muck)
+              Dom_substrate +  
+              SAV + # (pool Muck)
               scale(Year) +
               scale(Sum_SB) + 
               scale(Sum_SC) + 
@@ -105,3 +112,28 @@ summary(m1)            #temp = -0.05 (ns), breach = -1.8
   #breach --> SAV
   # others...
 
+p.eff <- plot_model(m1.no_temp_1, type = "eff")  #eff
+plot_grid(p.eff)
+p.resid <- plot_model(m1.no_temp_1, type = "resid")
+p.resid
+plot(m1.no_temp_1)
+
+
+
+m1.int <- glmer(Sum_TW ~  
+                        Dom_substrate +  # (pool Muck)
+                        scale(Year) * Zone +
+                        scale(Sum_SB) + 
+                        scale(Sum_SC) + 
+                        Rain_Sum +
+                        #temp_mean + 
+                        #min_DO +
+                        Since_Breach + 
+                        
+                        # should we reduce the WQ variables?  keep Temp and DO for now.
+                        (1|Zone),
+                      data = goby_master,
+                      #family = poisson,
+                      family = negative.binomial(1),  #poisson
+                      offset=log(volume))
+summary(m1.int)
