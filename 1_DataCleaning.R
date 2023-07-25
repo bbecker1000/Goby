@@ -8,7 +8,7 @@ library(lubridate)
 ## Import three data tables
 water_qual_event <- read_csv("Data/water_qual_event.csv", 
                              col_types = cols(Date = col_date(format = "%m/%d/%Y")))
-View(water_qual_event)
+water_qual_event
 fish_dat <- read_csv("Data/fish_dat.csv", 
                      col_types = cols(Year = col_double()))
 #View(fish_dat)
@@ -253,7 +253,7 @@ microsporidium
 goby_master <- list(water_qual_event, water_qual_wide, fish_dat_sum, microsporidium) %>%   #will add fish_mort ## removed fish_stats, 
   reduce(left_join, by = "Unique_ID2")
 str(goby_master)
-View(goby_master)
+goby_master
 
 #Volume is just mean depth by area and volumer has one na.  so replace all and make numeric
 goby_master$volume <- goby_master$Ave_depth * goby_master$Area
@@ -472,6 +472,8 @@ hist(goby_master_2$SB_density)
 
 
 write.csv(goby_master_2, "/Users/Thuy-Tien/R files/goby/goby_master_2.csv", row.names=FALSE)
+write.csv(goby_master_2, "data/goby_master_2.csv", row.names=FALSE)
+
 
 
 #####OK goby_master ready for analysis -----------------------------------------

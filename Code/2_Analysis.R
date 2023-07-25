@@ -24,7 +24,7 @@ goby_master$Dom_substrate <- ifelse(goby_master$Dom_substrate == "corophium_tube
                                     "muck", goby_master$Dom_substrate)
 
 
-View(goby_master)
+(goby_master)
 ##
 hist(goby_master$Sum_TW)
 (goby_master$Dom_substrate)
@@ -32,7 +32,7 @@ hist(goby_master$Water_temp_1)
 hist(goby_master$Sum_SC)
 hist(goby_master$Sum_SB)
 plot(goby_master$Zone)
-
+hist(goby_master$Rain_Sum)
 hist(goby_master$Since_Breach)  
 
 
@@ -45,9 +45,9 @@ m1 <- glmer(Sum_TW ~
               scale(Year) +
               scale(Sum_SB) + 
               scale(Sum_SC) + 
-              Rain_Sum +
-              temp_mean + 
-              min_DO +
+              scale(Rain_Sum) +
+              scale(temp_mean) + 
+                      scale(min_DO) +
               Zone +
               Since_Breach + # should we reduce the WQ variables?  keep Temp and DO for now.
               (1|Zone),
@@ -64,16 +64,16 @@ p.resid
 plot(m1) # need to identify a large outlier, also only 316 complete cases
 performance::r2(m1)
 
-## causal on WQ and breach
+## 1.0 causal on WQ and breach
 
 m1.no_breach <- glmer(Sum_TW ~  
               Dom_substrate +  # (pool Muck)
               scale(Year) +
               scale(Sum_SB) + 
               scale(Sum_SC) + 
-                Rain_Sum +
-                temp_mean + 
-              min_DO +
+                scale(Rain_Sum) +
+                scale(temp_mean) + 
+              scale(min_DO) +
               #Since_Breach + 
               Zone +
               # should we reduce the WQ variables?  keep Temp and DO for now.
@@ -88,7 +88,7 @@ m1.no_temp_1 <- glmer(Sum_TW ~
                         scale(Year) +
                         scale(Sum_SB) + 
                         scale(Sum_SC) + 
-                        Rain_Sum +
+                        scale(Rain_Sum) +
                         #temp_mean + 
                         #min_DO +
                         Since_Breach + 
@@ -100,7 +100,7 @@ m1.no_temp_1 <- glmer(Sum_TW ~
                       family = negative.binomial(1),  #poisson
                       offset=log(volume))
 
-summary(m1.no_breach)  #temp = -0.11 (sig)
+summary(m1.no_breach)  #temp = -0.25 (sig)
 summary(m1.no_temp_1)  #breach = -1.95,  
 summary(m1)            #temp = -0.05 (ns), breach = -1.8
 ## so once we know breach, there is little additional info gained from knowing temp.
@@ -108,15 +108,286 @@ summary(m1)            #temp = -0.05 (ns), breach = -1.8
 ## conclude that breach is the causal variable
 ## do same for 
   # substrate --> sculpin 
-  #breach --> stickleback
-  #breach --> SAV
-  # others...
+  # breach --> stickleback
+  # breach --> SAV
+  # SAV --> Sculpin
+  # Rain --> Microsporidia
+  # Rain --> WQ --> SAV --> Stickleback
 
 p.eff <- plot_model(m1.no_temp_1, type = "eff")  #eff
 plot_grid(p.eff)
 p.resid <- plot_model(m1.no_temp_1, type = "resid")
 p.resid
 plot(m1.no_temp_1)
+
+
+## 1.1 CAUSAL on breach --> stickleback
+
+m1.SB.breach <- glmer(Sum_TW ~  
+                        Dom_substrate +  # (pool Muck)
+                        scale(Year) +
+                        scale(Sum_SB) + 
+                        scale(Sum_SC) + 
+                        scale(Rain_Sum) +
+                        #scale(temp_mean) + 
+                        #scale(min_DO) +
+                        Since_Breach + 
+                        Zone +
+                        # should we reduce the WQ variables?  keep Temp and DO for now.
+                        (1|Zone),
+                      data = goby_master,
+                      #family = poisson,
+                      family = negative.binomial(1),  #poisson
+                      offset=log(volume))
+
+m1.SB.no_breach <- glmer(Sum_TW ~  
+                        Dom_substrate +  # (pool Muck)
+                        scale(Year) +
+                        scale(Sum_SB) + 
+                        scale(Sum_SC) + 
+                        scale(Rain_Sum) +
+                        #scale(temp_mean) + 
+                        #scale(min_DO) +
+                        #Since_Breach + 
+                        Zone +
+                        # should we reduce the WQ variables?  keep Temp and DO for now.
+                        (1|Zone),
+                      data = goby_master,
+                      #family = poisson,
+                      family = negative.binomial(1),  #poisson
+                      offset=log(volume))
+
+m1.no_SB.breach <- glmer(Sum_TW ~  
+                           Dom_substrate +  # (pool Muck)
+                           scale(Year) +
+                           #scale(Sum_SB) + 
+                           scale(Sum_SC) + 
+                           scale(Rain_Sum) +
+                           #scale(temp_mean) + 
+                           #scale(min_DO) +
+                           Since_Breach + 
+                           Zone +
+                           # should we reduce the WQ variables?  keep Temp and DO for now.
+                           (1|Zone),
+                         data = goby_master,
+                         #family = poisson,
+                         family = negative.binomial(1),  #poisson
+                         offset=log(volume))
+
+
+
+
+
+summary(m1.SB.breach)  #SB = ns , Breach = -1.96
+summary(m1.SB.no_breach)  #SB = ns,  
+summary(m1.no_SB.breach)  #Breach = -1.97
+
+# so SB not important either way
+
+## 1.2 CAUSAL on breach --> SAV
+
+m1.SAV.breach <- glmer(Sum_TW ~  
+                        Dom_substrate +  # (pool Muck)
+                        scale(Year) +
+                        #scale(Sum_SB) + 
+                        scale(Sum_SC) + 
+                        scale(Rain_Sum) +
+                        scale(SAV) +
+                        #scale(temp_mean) + 
+                        #scale(min_DO) +
+                        Since_Breach + 
+                        Zone +
+                        # should we reduce the WQ variables?  keep Temp and DO for now.
+                        (1|Zone),
+                      data = goby_master,
+                      #family = poisson,
+                      family = negative.binomial(1),  #poisson
+                      offset=log(volume))
+
+m1.SAV.no_breach <- glmer(Sum_TW ~  
+                           Dom_substrate +  # (pool Muck)
+                           scale(Year) +
+                           #scale(Sum_SB) + 
+                           scale(Sum_SC) + 
+                           scale(Rain_Sum) +
+                            scale(SAV) +
+                           #scale(temp_mean) + 
+                           #scale(min_DO) +
+                           #Since_Breach + 
+                           Zone +
+                           # should we reduce the WQ variables?  keep Temp and DO for now.
+                           (1|Zone),
+                         data = goby_master,
+                         #family = poisson,
+                         family = negative.binomial(1),  #poisson
+                         offset=log(volume))
+
+m1.no_SAV.breach <- glmer(Sum_TW ~  
+                           Dom_substrate +  # (pool Muck)
+                           scale(Year) +
+                           #scale(Sum_SB) + 
+                           scale(Sum_SC) + 
+                           scale(Rain_Sum) +
+                            #scale(SAV) +
+                           #scale(temp_mean) + 
+                           #scale(min_DO) +
+                           Since_Breach + 
+                           Zone +
+                           # should we reduce the WQ variables?  keep Temp and DO for now.
+                           (1|Zone),
+                         data = goby_master,
+                         #family = poisson,
+                         family = negative.binomial(1),  #poisson
+                         offset=log(volume))
+
+
+
+
+
+summary(m1.SAV.breach)  #SAV = .12 , Breach = -1.87
+summary(m1.SAV.no_breach)  #SAV = .20,  
+summary(m1.no_SAV.breach)  #Breach = -1.97
+
+# so SAV keeps importance not important either way
+
+## 1.3 CAUSAL on SAV --> Sculpin
+
+m1.SAV.SC <- glmer(Sum_TW ~  
+                         Dom_substrate +  # (pool Muck)
+                         scale(Year) +
+                         #scale(Sum_SB) + 
+                         scale(Sum_SC) + 
+                         scale(Rain_Sum) +
+                         scale(SAV) +
+                         #scale(temp_mean) + 
+                         #scale(min_DO) +
+                         Since_Breach + 
+                         Zone +
+                         # should we reduce the WQ variables?  keep Temp and DO for now.
+                         (1|Zone),
+                       data = goby_master,
+                       #family = poisson,
+                       family = negative.binomial(1),  #poisson
+                       offset=log(volume))
+
+
+m1.SAV.no_SC <- glmer(Sum_TW ~  
+                        Dom_substrate +  # (pool Muck)
+                        scale(Year) +
+                        #scale(Sum_SB) + 
+                        # scale(Sum_SC) + 
+                        scale(Rain_Sum) +
+                        scale(SAV) +
+                        #scale(temp_mean) + 
+                        #scale(min_DO) +
+                        Since_Breach + 
+                        Zone +
+                        # should we reduce the WQ variables?  keep Temp and DO for now.
+                        (1|Zone),
+                      data = goby_master,
+                      #family = poisson,
+                      family = negative.binomial(1),  #poisson
+                      offset=log(volume))
+
+
+m1.no_SAV.SC <- glmer(Sum_TW ~  
+                        Dom_substrate +  # (pool Muck)
+                        scale(Year) +
+                        #scale(Sum_SB) + 
+                        scale(Sum_SC) + 
+                        scale(Rain_Sum) +
+                        #scale(SAV) +
+                        #scale(temp_mean) + 
+                        #scale(min_DO) +
+                        Since_Breach + 
+                        Zone +
+                        # should we reduce the WQ variables?  keep Temp and DO for now.
+                        (1|Zone),
+                      data = goby_master,
+                      #family = poisson,
+                      family = negative.binomial(1),  #poisson
+                      offset=log(volume))
+
+summary(m1.SAV.SC)  #SAV = .12 , SC = -0.31
+summary(m1.SAV.no_SC)  #SAV = .12,  
+summary(m1.no_SAV.SC)  #SC = -0.31
+
+# SAV no effect on SC so keep SC !
+
+## 1.4 CAUSAL on Rain --> microsporidia
+
+m1.Rain.micro <- glmer(Sum_TW ~  
+                     Dom_substrate +  # (pool Muck)
+                     scale(Year) +
+                     #scale(Sum_SB) + 
+                     scale(Sum_SC) + 
+                     scale(Rain_Sum) +
+                     scale(SAV) +
+                     scale(micro_sum) +
+                     #scale(temp_mean) + 
+                     #scale(min_DO) +
+                     Since_Breach + 
+                     Zone +
+                     # should we reduce the WQ variables?  keep Temp and DO for now.
+                     (1|Zone),
+                   data = goby_master,
+                   #family = poisson,
+                   family = negative.binomial(1),  #poisson
+                   offset=log(volume))
+
+
+m1.Rain.no_micro <- glmer(Sum_TW ~  
+                        Dom_substrate +  # (pool Muck)
+                        scale(Year) +
+                        #scale(Sum_SB) + 
+                        # scale(Sum_SC) + 
+                        scale(Rain_Sum) +
+                        scale(SAV) +
+                        #scale(micro_sum) +
+                        #scale(temp_mean) + 
+                        #scale(min_DO) +
+                        Since_Breach + 
+                        Zone +
+                        # should we reduce the WQ variables?  keep Temp and DO for now.
+                        (1|Zone),
+                      data = goby_master,
+                      #family = poisson,
+                      family = negative.binomial(1),  #poisson
+                      offset=log(volume))
+
+
+m1.no_Rain.micro <- glmer(Sum_TW ~  
+                        Dom_substrate +  # (pool Muck)
+                        scale(Year) +
+                        #scale(Sum_SB) + 
+                        scale(Sum_SC) + 
+                        #scale(Rain_Sum) +
+                        scale(micro_sum) +
+                        #scale(SAV) +
+                        #scale(temp_mean) + 
+                        #scale(min_DO) +
+                        Since_Breach + 
+                        Zone +
+                        # should we reduce the WQ variables?  keep Temp and DO for now.
+                        (1|Zone),
+                      data = goby_master,
+                      #family = poisson,
+                      family = negative.binomial(1),  #poisson
+                      offset=log(volume))
+
+summary(m1.Rain.micro)  #Rain = ns , micro = 0.24
+summary(m1.Rain.no_micro)  #rain = ns,  
+summary(m1.no_Rain.micro)  #micro = 0.26
+
+# rain no impact on Goby or micro.  KEEP Micro, drop rain.
+
+p.eff <- plot_model(m1.no_Rain.micro, type = "eff")  #eff
+plot_grid(p.eff)
+p.resid <- plot_model(m1.no_Rain.micro, type = "resid")
+p.resid
+plot(m1.no_Rain.micro)
+
+
 
 
 
