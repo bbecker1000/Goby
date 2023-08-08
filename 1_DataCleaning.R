@@ -123,10 +123,36 @@ fish_dat_length <-
               values_from = "Length",
               names_prefix = "Length_",
               values_fn = mean)   # added to get mean for the multiple groups of same 
-(fish_dat_length2)
+(fish_dat_length)
 hist(fish_dat_length$Length_TW)
 hist(fish_dat_length$Length_SB)
 hist(fish_dat_length$Length_SC)
+
+
+#### 2023-08-07
+#### fixing up the fish length to get species by year.
+#### for fish lengths need to use fish_dat
+
+hist(fish_dat$Year)
+
+length.test1 <- 
+  fish_dat %>% 
+  filter(!is.na(Length)) %>%
+  filter(Season == "Fall") %>%
+  group_by(Species, Year) %>%
+  summarise_at(vars(Length),             
+               list(min_length = min,
+                    max_length = max,
+                    mean_length = mean,
+                    sample_size = length))
+  
+  ggplot(length.test1, aes(Year, mean_length, color = Species)) +
+    geom_point() +
+    geom_smooth()
+
+
+
+
 
 
 ## 2023-06-21 LETS TALK THROUGH BELOW SO BB UNDERSTANDS BETTER. 
@@ -160,7 +186,7 @@ fish_dat_length4$Length_SB <- trimws(fish_dat_length4$Length_SB)
 fish_dat_length4$Length_SC <- trimws(fish_dat_length4$Length_SC)
 
 
-## 2023-06-21  ALL GOOD FROM HERE DOWN EXCEP NEED BREACH DATA.
+## 2023-06-21  ALL GOOD FROM HERE DOWN EXCEPT NEED BREACH DATA.
 ###---------
 
 # sum fish into columns by species
@@ -173,7 +199,7 @@ fish_dat_sum <-
 
 fish_dat_sum <- fish_dat_sum %>% select(-Sum_NONE) #remove "none" column
 fish_dat_sum[is.na(fish_dat_sum)] <- 0
-#View(fish_dat_sum)
+(fish_dat_sum)
 
 #calculate min, max, mean for species length per unique ID  (consider adding 95% CI) !!
 ## FIX so that column is pulling TWG length only and not all species lengths
