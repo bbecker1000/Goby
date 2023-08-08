@@ -1,5 +1,6 @@
 source("1_DataCleaning.R")
 
+
 library(lme4)
 library(sjPlot)
 library(marginaleffects)
@@ -23,17 +24,72 @@ goby_master$Since_Breach[is.na(goby_master$Since_Breach)] <- 0
 goby_master$Dom_substrate <- ifelse(goby_master$Dom_substrate == "corophium_tubes", 
                                     "muck", goby_master$Dom_substrate)
 
+# deal with soume outlier issues on SB and SC
+
+goby_master$Sum_SB <- ifelse(goby_master$Sum_SB > 1000 & !is.na(goby_master$Sum_SB), 
+                             1000, 
+                             goby_master$Sum_SB)
+hist(goby_master$Sum_SB)
+goby_master$Sum_SB
+goby_master$Sum_SC <- ifelse(goby_master$Sum_SC > 150, 
+                             150 ,
+                             goby_master$Sum_SC)
+hist(goby_master$Sum_SC)
+
+goby_master$Sum_TW <- ifelse(goby_master$Sum_TW > 1000 & !is.na(goby_master$Sum_TW), 
+                             1000, 
+                             goby_master$Sum_TW)
+
 
 (goby_master)
 ##
 hist(goby_master$Sum_TW)
-(goby_master$Dom_substrate)
+barplot(goby_master$Dom_substrate)
 hist(goby_master$Water_temp_1)
 hist(goby_master$Sum_SC)
 hist(goby_master$Sum_SB)
 plot(goby_master$Zone)
 hist(goby_master$Rain_Sum)
 hist(goby_master$Since_Breach)  
+hist(log(goby_master$volume))
+
+#check is sampling effort consistent over time.
+ggplot(goby_master, aes(Year, volume)) +
+  geom_point() +
+  geom_smooth()
+
+ggplot(goby_master, aes(Year, Area)) +
+  geom_point() +
+  geom_smooth()
+
+ggplot(goby_master, aes(Year, Ave_depth)) +
+  geom_point() +
+  geom_smooth()
+
+
+## get nb theta estimate for use in negative binomial models
+m.nb <- glmer.nb(Sum_TW ~ 
+                   Dom_substrate +  
+                   SAV + # (pool Muck)
+                   scale(Year) +
+                   scale(Sum_SB) + 
+                   scale(Sum_SC) + 
+                   scale(Rain_Sum) +
+                   scale(temp_mean) + 
+                   scale(min_DO) +
+                   Zone +
+                   Since_Breach + # should we reduce the WQ variables?  keep Temp and DO for now.
+                   (1|Zone),
+                   data = goby_master,
+                 #family = poisson,
+                 #family = negative.binomial(1),  #poisson
+                 offset=log(volume), verbose=TRUE)
+m.nb
+## The neg.binomial theta parameter:
+THETA <- getME(m.nb, "glmer.nb.theta")
+LL <- logLik(m.nb)
+
+theta = 0.52
 
 
 
@@ -53,8 +109,13 @@ m1 <- glmer(Sum_TW ~
               (1|Zone),
             data = goby_master,
             #family = poisson,
-            family = negative.binomial(1),  #poisson
-            offset=log(volume))
+            family = negative.binomial(THETA),  #poisson
+            offset=log(volume)
+            #offset=log(Area)
+            )
+
+
+
 
 summary(m1)
 p.eff <- plot_model(m1, type = "eff")  #eff
@@ -80,7 +141,7 @@ m1.no_breach <- glmer(Sum_TW ~
               (1|Zone),
             data = goby_master,
             #family = poisson,
-            family = negative.binomial(1),  #poisson
+            family = negative.binomial(THETA),  #poisson
             offset=log(volume))
 
 m1.no_temp_1 <- glmer(Sum_TW ~  
@@ -97,7 +158,7 @@ m1.no_temp_1 <- glmer(Sum_TW ~
                         (1|Zone),
                       data = goby_master,
                       #family = poisson,
-                      family = negative.binomial(1),  #poisson
+                      family = negative.binomial(THETA),  #poisson
                       offset=log(volume))
 
 summary(m1.no_breach)  #temp = -0.25 (sig)
