@@ -146,11 +146,30 @@ length.test1 <-
                     mean_length = mean,
                     sample_size = length))
   
+#mean length over time
   ggplot(length.test1, aes(Year, mean_length, color = Species)) +
     geom_point() +
     geom_smooth()
+  
+#boxplot over time  
+  ggplot(fish_dat, aes(x = as.factor(Year), y = Length, color = Species)) +
+    geom_boxplot()
+  
+  fish_dat_TW <- fish_dat %>%
+                  filter(Species == "TW")
+  
+  ggplot(fish_dat_TW, aes(x = as.factor(Year), y = Length)) +
+    geom_violin() +
+    geom_point()
+  
+  ggplot(fish_dat_TW, aes(Length)) +
+    geom_histogram() +
+    geom_vline(xintercept = 12, lty = 2) +
+    facet_wrap(~Year)
 
-
+  ggplot(fish_dat_TW, aes(Length)) +
+    geom_histogram() +
+    geom_vline(xintercept = 12, lty = 2)
 
 
 
@@ -504,8 +523,16 @@ write.csv(goby_master_2, "data/goby_master_2.csv", row.names=FALSE)
 
 #####OK goby_master ready for analysis -----------------------------------------
 
+## wind data
+## https://coastwatch.pfeg.noaa.gov/erddap/griddap/erdlasFnWPr.html
 
+##double checked that latlon was just offshore frmo rodeo lagoon.  (app wants lat = 37.83, long east = 360-122.55 = 237.45)
 
+wind <- read_csv("Data/Rodeo_Wind_37.83_-122.55_1994-2023_monthly_from ERDDAP_Upwelling.csv")
+
+ggplot(wind,aes(time, u_mean_ms)) +
+         geom_point() +
+          geom_smooth()
 
 
 

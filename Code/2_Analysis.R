@@ -67,6 +67,8 @@ ggplot(goby_master, aes(Year, Ave_depth)) +
   geom_smooth()
 
 
+## all authors decided that Area makes more sense than Volume since most (>99%) gobies are not larvae (<12mm) and are neritic.
+
 ## get nb theta estimate for use in negative binomial models
 m.nb <- glmer.nb(Sum_TW ~ 
                    Dom_substrate +  
@@ -83,13 +85,13 @@ m.nb <- glmer.nb(Sum_TW ~
                    data = goby_master,
                  #family = poisson,
                  #family = negative.binomial(1),  #poisson
-                 offset=log(volume), verbose=TRUE)
+                 offset=log(Area), verbose=TRUE)
 m.nb
 ## The neg.binomial theta parameter:
 THETA <- getME(m.nb, "glmer.nb.theta")
 LL <- logLik(m.nb)
 
-theta = 0.52
+#theta = 0.57
 
 
 
@@ -110,8 +112,8 @@ m1 <- glmer(Sum_TW ~
             data = goby_master,
             #family = poisson,
             family = negative.binomial(THETA),  #poisson
-            offset=log(volume)
-            #offset=log(Area)
+            #offset=log(volume)
+            offset=log(Area)
             )
 
 

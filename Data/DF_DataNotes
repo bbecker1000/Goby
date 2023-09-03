@@ -52,6 +52,14 @@ include Spec_cond and perc_sat,
 
 
 
+#####
+upwelling index is an index of upwelling winds each spring, so use that for the data?
+
+2023-09-03 Fong
+so maybe generalizing from Spring through late-summer (mid September) might work.  
+use the u component of wind
+probably make non-linear
+
 
 
 
