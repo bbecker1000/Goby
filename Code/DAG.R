@@ -44,6 +44,8 @@ DAG_GOBY <- dagitty("dag{
   Breach -> WQ -> GOBY ;
   Rain -> WQ -> GOBY ;
   Wind -> WQ -> GOBY ;
+  Zone -> WQ -> GOBY ;
+  Zone -> Wind ;
   WQ -> SAV -> GOBY ;
   WQ -> Sculpin -> GOBY ;
   WQ -> Stickleback -> GOBY ;
@@ -54,6 +56,7 @@ DAG_GOBY <- dagitty("dag{
   
   Year [exposure] ;
   WQ [exposure] ;
+  Zone [exposure] ;
   Stickleback [exposure] ;
   Sculpin [exposure] ;
   Microsporidia [exposure] ;
@@ -72,13 +75,13 @@ impliedConditionalIndependencies(DAG_GOBY)
 
 # to pretty up the plot 
 # not done yet
-coordinates(DAG_GOBY) <- list(x=c(BreedingYear=3,AreaType=1,Visitor=2,PEFA=5,
-                                  WinterPrecip=5,ShortDrought=5, LongDrought =5, 
-                                  Psi = 3, VegU= 4, PreyU = 4),
-                              y=c(BreedingYear=4,AreaType=4,Visitor=4,PEFA=4,
-                                  WinterPrecip=3,ShortDrought=2, LongDrought =1, 
-                                  Psi = 2, VegU=2, PreyU = 1))
-
+coordinates(DAG_GOBY) <- list(x=c(Year=0,WQ=3,Stickleback=3,Sculpin=6,
+                                  Rain=0,Microsporidia=0, Substrate=3, 
+                                  SAV=4.5, Breach=3, Wind=6, Zone= 6, GOBY=0),
+                              y=c(Year=3,WQ=-3,Stickleback=-1,Sculpin=1,
+                                  Rain=-5,Microsporidia=-3, Substrate=3, 
+                                  SAV=0, Breach=-5, Wind=-3, Zone=-5, GOBY=0))
+plot(DAG_GOBY)
 
 
 
