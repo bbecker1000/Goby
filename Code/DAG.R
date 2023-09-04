@@ -35,27 +35,26 @@ set.seed(123)
 
 DAG_GOBY <- dagitty("dag{ 
   Year -> GOBY ;
-  WQ -> GOBY ;
+  O2 -> GOBY ;
   Stickleback -> GOBY ;
   Sculpin -> GOBY ;
-  Rain -> Microsporidia -> GOBY ;
+  Microsporidia -> GOBY ;
   Substrate -> GOBY ;
   SAV -> GOBY ;
-  Breach -> WQ -> GOBY ;
-  Rain -> WQ -> GOBY ;
-  Wind -> WQ -> GOBY ;
-  Zone -> WQ -> GOBY ;
-  Zone -> Wind ;
-  WQ -> SAV -> GOBY ;
-  WQ -> Sculpin -> GOBY ;
-  WQ -> Stickleback -> GOBY ;
-  WQ -> SAV -> Stickleback ;
-  WQ -> SAV -> Sculpin ;
+  Rain -> Breach -> O2 -> GOBY ;
+  Rain -> O2 -> GOBY ;
+  Wind -> O2 -> GOBY ;
+  Zone -> O2 -> GOBY ;
+  O2 -> SAV -> GOBY ;
+  O2 -> Sculpin -> GOBY ;
+  O2 -> Stickleback -> GOBY ;
+  O2 -> SAV -> Stickleback ;
+  O2 -> SAV -> Sculpin ;
   Substrate -> Sculpin -> GOBY;
   
   
   Year [exposure] ;
-  WQ [exposure] ;
+  O2 [exposure] ;
   Zone [exposure] ;
   Stickleback [exposure] ;
   Sculpin [exposure] ;
@@ -68,6 +67,7 @@ DAG_GOBY <- dagitty("dag{
 }")
   
 ## add in zone?
+par(mfrow = c(1,1))
 
 plot(DAG_GOBY)
 impliedConditionalIndependencies(DAG_GOBY)
@@ -75,12 +75,18 @@ impliedConditionalIndependencies(DAG_GOBY)
 
 # to pretty up the plot 
 # not done yet
-coordinates(DAG_GOBY) <- list(x=c(Year=0,WQ=3,Stickleback=3,Sculpin=6,
-                                  Rain=0,Microsporidia=0, Substrate=3, 
-                                  SAV=4.5, Breach=3, Wind=6, Zone= 6, GOBY=0),
-                              y=c(Year=3,WQ=-3,Stickleback=-1,Sculpin=1,
-                                  Rain=-5,Microsporidia=-3, Substrate=3, 
-                                  SAV=0, Breach=-5, Wind=-3, Zone=-5, GOBY=0))
+coordinates(DAG_GOBY) <- list(x=c(Year=1,O2=3,
+                                  Stickleback=3,Sculpin=5,
+                                  Rain=1,Microsporidia=1, 
+                                  Substrate=3, SAV=5, 
+                                  Breach=3, Wind=5, 
+                                  Zone= 5, GOBY=1),
+                              y=c(Year=3,O2=-3,
+                                  Stickleback=-1,Sculpin=1,
+                                  Rain=-5,Microsporidia=-3, 
+                                  Substrate=3, SAV=0, 
+                                  Breach=-5, Wind=-3, 
+                                  Zone=-5, GOBY=0))
 plot(DAG_GOBY)
 
 
