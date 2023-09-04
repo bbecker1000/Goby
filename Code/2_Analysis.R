@@ -39,8 +39,11 @@ goby_master$Dom_substrate <- ifelse(goby_master$Dom_substrate == "corophium_tube
 # goby_master$Sum_TW <- ifelse(goby_master$Sum_TW > 1000 & !is.na(goby_master$Sum_TW), 
 #                              1000, 
 #                              goby_master$Sum_TW)
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ab791d45f7578ab3dabd5a35a88c269aee11bc09
 
 
 (goby_master)
@@ -98,7 +101,11 @@ m.nb
 THETA <- getME(m.nb, "glmer.nb.theta")
 LL <- logLik(m.nb)
 
+<<<<<<< HEAD
 #theta = 0.58-0.61
+=======
+#theta = 0.61
+>>>>>>> ab791d45f7578ab3dabd5a35a88c269aee11bc09
 
 
 
@@ -139,8 +146,12 @@ performance::r2(m1)
 
 m1.no_breach <- glmer(Sum_TW ~  
               #Dom_substrate +  # (pool Muck)
+<<<<<<< HEAD
                 scale(SAV) +
                 scale(Year) +
+=======
+              scale(Year) +
+>>>>>>> ab791d45f7578ab3dabd5a35a88c269aee11bc09
               scale(Sum_SB) + 
               scale(Sum_SC) + 
                 scale(Rain_Sum) +
@@ -158,7 +169,10 @@ m1.no_breach <- glmer(Sum_TW ~
 
 m1.no_temp_1 <- glmer(Sum_TW ~  
                        # Dom_substrate +  # (pool Muck)
+<<<<<<< HEAD
                         scale(SAV) +
+=======
+>>>>>>> ab791d45f7578ab3dabd5a35a88c269aee11bc09
                         scale(Year) +
                         scale(Sum_SB) + 
                         scale(Sum_SC) + 
@@ -175,9 +189,15 @@ m1.no_temp_1 <- glmer(Sum_TW ~
                       family = negative.binomial(THETA),  #poisson
                       offset=log(volume))
 
+<<<<<<< HEAD
 summary(m1.no_breach)  #temp = -0.17 (P = 0.08)
 summary(m1.no_temp_1)  #breach = -1.0 (P < 0.01)  
 summary(m1)            #temp = -0.11 (ns), breach = -1.2
+=======
+summary(m1.no_breach)  #temp = -0.17 (P = 0.05)
+summary(m1.no_temp_1)  #breach = -1.5 (P < 0.01)  
+summary(m1)            #temp = -0.08 (ns), breach = -1.4
+>>>>>>> ab791d45f7578ab3dabd5a35a88c269aee11bc09
 ## so once we know breach, there is little additional info gained from knowing temp.
 ## so breach constant, but temp weaker (and non-significant) with breach included
 ## conclude that breach is the causal variable
@@ -200,7 +220,10 @@ plot(m1.no_temp_1)
 ## Breach vs DO
 
 m1.breach_DO <- glmer(Sum_TW ~  
+<<<<<<< HEAD
                         scale(SAV) +
+=======
+>>>>>>> ab791d45f7578ab3dabd5a35a88c269aee11bc09
                         scale(Year) +
                         scale(Sum_SB) + 
                         scale(Sum_SC) + 
@@ -215,8 +238,12 @@ m1.breach_DO <- glmer(Sum_TW ~
                       offset=log(Area))
 
 m1.DO <- glmer(Sum_TW ~  
+<<<<<<< HEAD
                  scale(SAV) +
                  scale(Year) +
+=======
+                        scale(Year) +
+>>>>>>> ab791d45f7578ab3dabd5a35a88c269aee11bc09
                         scale(Sum_SB) + 
                         scale(Sum_SC) + 
                         scale(Rain_Sum) +
@@ -230,6 +257,7 @@ m1.DO <- glmer(Sum_TW ~
                       offset=log(Area))
 
 m1.Breach <- glmer(Sum_TW ~  
+<<<<<<< HEAD
                      scale(SAV) +
                      scale(Year) +
                         scale(Sum_SB) + 
@@ -258,6 +286,8 @@ summary(m1.DO)
 
 m1.breach_SB <- glmer(Sum_TW ~  
                         scale(SAV) +
+=======
+>>>>>>> ab791d45f7578ab3dabd5a35a88c269aee11bc09
                         scale(Year) +
                         scale(Sum_SB) + 
                         scale(Sum_SC) + 
@@ -271,6 +301,7 @@ m1.breach_SB <- glmer(Sum_TW ~
                       family = negative.binomial(THETA),  
                       offset=log(Area))
 
+<<<<<<< HEAD
 m1.breach <- glmer(Sum_TW ~  
                      scale(SAV) +
                      scale(Year) +
@@ -289,11 +320,28 @@ m1.breach <- glmer(Sum_TW ~
 m1.SB <- glmer(Sum_TW ~  
                  scale(SAV) +
                  scale(Year) +
+=======
+summary(m1.breach_DO)
+# DO = 0.06, p = .41
+# breach = -1.4, p < 0.01
+summary(m1.Breach)
+# breach = -1.36, p < 0.01
+summary(m1.DO)
+# DO = 0.14, p = .07
+
+# so Breach controls DO
+
+## Breach vs DO
+
+m1.breach_SB <- glmer(Sum_TW ~  
+                        scale(Year) +
+>>>>>>> ab791d45f7578ab3dabd5a35a88c269aee11bc09
                         scale(Sum_SB) + 
                         scale(Sum_SC) + 
                         scale(Rain_Sum) +
                         #scale(temp_mean) + 
                         #scale(min_DO) +
+<<<<<<< HEAD
                         #Since_Breach + 
                         scale(u_mean) +
                         (1|Zone)+ (1|Dom_substrate),
@@ -310,6 +358,64 @@ summary(m1.SB)
 # SB = 0.12, p = .13
 
 # again Breach explains it all.  drop SB
+=======
+                        Since_Breach + 
+                        scale(u_mean) +
+                        (1|Zone)+ (1|Dom_substrate),
+                      data = goby_master,
+                      family = negative.binomial(THETA),  
+                      offset=log(volume))
+
+
+
+
+
+
+
+## 1.1 CAUSAL on breach --> stickleback
+
+m1.SB.breach <- glmer(Sum_TW ~  
+                        scale(Year) +
+                        scale(Sum_SB) + 
+                        scale(Sum_SC) + 
+                        scale(Rain_Sum) +
+                        #scale(temp_mean) + 
+                        #scale(min_DO) +
+                        Since_Breach + 
+                        scale(u_mean) +
+                        (1|Zone) + (1|Dom_substrate),
+                      data = goby_master,
+                      #family = poisson,
+                      family = negative.binomial(THETA),  #poisson
+                      offset=log(volume))
+
+m1.SB.no_breach <- glmer(Sum_TW ~  
+                        scale(Year) +
+                        scale(Sum_SB) + 
+                        scale(Sum_SC) + 
+                        scale(Rain_Sum) +
+                        #scale(temp_mean) + 
+                        #scale(min_DO) +
+                        Since_Breach + 
+                         (1|Zone)+ (1|Dom_substrate),
+                      data = goby_master,
+                      #family = poisson,
+                      family = negative.binomial(THETA),  #poisson
+                      offset=log(volume))
+
+m1.no_SB.breach <- glmer(Sum_TW ~  
+                           scale(Year) +
+                           #scale(Sum_SB) + 
+                           scale(Sum_SC) + 
+                           scale(Rain_Sum) +
+                           #scale(temp_mean) + 
+                           #scale(min_DO) +
+                           Since_Breach + 
+                           (1|Zone)+ (1|Dom_substrate),
+                         data = goby_master,
+                         family = negative.binomial(1), 
+                         offset=log(volume))
+>>>>>>> ab791d45f7578ab3dabd5a35a88c269aee11bc09
 
 
 
@@ -324,12 +430,19 @@ m1.breach_SAV <- glmer(Sum_TW ~
                         #scale(temp_mean) + 
                         #scale(min_DO) +
                         Since_Breach + 
+<<<<<<< HEAD
                         scale(u_mean) +
                         (1|Zone)+ (1|Dom_substrate),
+=======
+                        Zone +
+                        # should we reduce the WQ variables?  keep Temp and DO for now.
+                         (1|Zone)+ (1|Dom_substrate),
+>>>>>>> ab791d45f7578ab3dabd5a35a88c269aee11bc09
                       data = goby_master,
                       family = negative.binomial(THETA),  
                       offset=log(Area))
 
+<<<<<<< HEAD
 m1.breach <- glmer(Sum_TW ~  
                      scale(Year) +
                      #scale(Sum_SB) + 
@@ -358,6 +471,43 @@ m1.SAV <- glmer(Sum_TW ~
                data = goby_master,
                family = negative.binomial(THETA),  
                offset=log(Area))
+=======
+m1.SAV.no_breach <- glmer(Sum_TW ~  
+                           Dom_substrate +  # (pool Muck)
+                           scale(Year) +
+                           #scale(Sum_SB) + 
+                           scale(Sum_SC) + 
+                           scale(Rain_Sum) +
+                            scale(SAV) +
+                           #scale(temp_mean) + 
+                           #scale(min_DO) +
+                           #Since_Breach + 
+                           Zone +
+                           # should we reduce the WQ variables?  keep Temp and DO for now.
+                            (1|Zone)+ (1|Dom_substrate),
+                         data = goby_master,
+                         #family = poisson,
+                         family = negative.binomial(1),  #poisson
+                         offset=log(volume))
+
+m1.no_SAV.breach <- glmer(Sum_TW ~  
+                           Dom_substrate +  # (pool Muck)
+                           scale(Year) +
+                           #scale(Sum_SB) + 
+                           scale(Sum_SC) + 
+                           scale(Rain_Sum) +
+                            #scale(SAV) +
+                           #scale(temp_mean) + 
+                           #scale(min_DO) +
+                           Since_Breach + 
+                           Zone +
+                           # should we reduce the WQ variables?  keep Temp and DO for now.
+                            (1|Zone)+ (1|Dom_substrate),
+                         data = goby_master,
+                         #family = poisson,
+                         family = negative.binomial(1),  #poisson
+                         offset=log(volume))
+>>>>>>> ab791d45f7578ab3dabd5a35a88c269aee11bc09
 
 
 summary(m1.breach_SAV)
