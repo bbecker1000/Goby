@@ -534,7 +534,34 @@ ggplot(wind,aes(time, u_mean_ms)) +
          geom_point() +
           geom_smooth()
 
+head(wind)
+library(lubridate)
 
+## get mean u component of wind (e-w) for April - Sept each year
+wind$Year <- year(wind$time)
+wind$Month <- month(wind$time)
+
+wind_A <- wind %>% filter(Month > 3 & Month < 10)
+## get mean and max for each U for each year
+wind_mean <- wind_A %>%
+            group_by(Year) %>%
+            summarize(u_mean = mean(u_mean_ms))
+
+wind_max <- wind_A %>%
+  group_by(Year) %>%
+  summarize(u_max = max(u_mean_ms))
+
+par(mfrow = c(1,2))
+hist(wind_mean$u_mean)
+hist(wind_max$u_max)
+
+wind_ready <- cbind(wind_mean, wind_max)
+wind_ready <- wind_ready[,-3]
+
+## attach to goby_master_2
+
+library(plyr)
+goby_master_3 <- left_join(goby_master_2, wind_ready, by = "Year")
 
 
 
