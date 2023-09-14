@@ -90,4 +90,47 @@ coordinates(DAG_GOBY) <- list(x=c(Year=1,O2=3,
 plot(DAG_GOBY)
 
 
+#####----------------------------------
+#try with ggdag
+library(ggdag)
+goby_dag <- dagify(
+  GOBY ~ Year,
+  GOBY ~ O2,
+  GOBY ~  Stickleback,
+  GOBY ~ Sculpin,
+  GOBY ~ Microsporidia,
+  GOBY ~ Substrate,
+  GOBY ~ SAV,
+  Breach ~ Rain,
+  Breach ~ Wind,
+  O2 ~ Breach,
+  #O2 ~ Rain,
+  O2 ~ Wind,
+  Sculpin ~ O2,
+  Stickleback ~ O2,
+  Stickleback ~ SAV,
+  Sculpin ~ SAV,
+  Sculpin ~ Substrate,
+  
+  exposure = "SAV",#"Breach",
+  outcome = "GOBY"
+  #labels = c(
+  #  "coffee" = "Coffee", 
+  #  "cancer" = "Lung Cancer", 
+  #  "smoking" = "Smoking", 
+  #  "addictive" = "Addictive \nBehavior"
+  #)
+)
+ggdag(goby_dag, text_col = "white", 
+                stylized = TRUE) + 
+                theme_dag_blank()
+ggdag_paths(goby_dag, 
+            #adjust_for = c("Breach"),
+            text_col = "black")
+
+ggdag_adjustment_set(goby_dag, text_col = "black")
+
+library(dagitty)
+
+adjustmentSets(goby_dag)
 
